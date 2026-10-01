@@ -1,6 +1,7 @@
+from pathlib import Path
 import re 
 
-file ="/data/vansh/LLM_FROM_SCRATCH/archive/the-verdict.txt"
+file =Path(__file__).resolve().parents[1] / "archive" / "the-verdict.txt"
 with open(file) as files:
     raw_text=files.read()
 
