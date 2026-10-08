@@ -3,12 +3,13 @@ import torch.nn as nn
 
 class Causal_Attention(nn.Module):
 
-    def __init__(self, In_dim, Out_dim):
+    def __init__(self, In_dim, Out_dim,dropout,bias=False):
         super().__init__()
 
-        self.W_Q = nn.Linear(In_dim, Out_dim)
-        self.W_K = nn.Linear(In_dim, Out_dim)
-        self.W_V = nn.Linear(In_dim, Out_dim)
+        self.W_Q = nn.Linear(In_dim, Out_dim,bias=False)
+        self.W_K = nn.Linear(In_dim, Out_dim,bias=False)
+        self.W_V = nn.Linear(In_dim, Out_dim,bias=False)
+        self.dropout=torch.dropout(dropout)
 
     def forward(self, x):
 
@@ -29,8 +30,10 @@ class Causal_Attention(nn.Module):
             mask, float('-inf')
         )
         attention_score = torch.softmax(attention_score, dim=-1)
+        attention_score=self.dropout(attention_score)
         final_output = torch.matmul(attention_score, V)
-          return final_output
+
+        return final_output
 
 
 if __name__=="main":
@@ -46,5 +49,3 @@ if __name__=="main":
 
     print(output.shape)
     print(output)
-
-      
