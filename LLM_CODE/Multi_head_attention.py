@@ -80,3 +80,48 @@ class MultiHeadAttention(nn.Module):
 
         return context_vec
 
+if __name__ == "__main__":
+
+    torch.manual_seed(42)
+
+    # GPT-2 Small configuration
+    d_in = 768
+    d_out = 768
+    context_length = 1024
+    num_heads = 12
+    dropout = 0.1
+
+    # Initialize model
+    mha = MultiHeadAttention(
+        d_in=d_in,
+        d_out=d_out,
+        context_length=context_length,
+        dropout=dropout,
+        num_heads=num_heads,
+        qkv_bias=True
+    )
+
+    # Dummy input
+    # Batch size = 2
+    # Sequence length = 100
+    # Embedding dimension = 768
+    x = torch.randn(2, 100, 768)
+
+    # Set evaluation mode (disables dropout)
+    mha.eval()
+
+    # Forward pass
+    with torch.no_grad():
+        output = mha(x)
+
+    # Print results
+    print("Input shape:", x.shape)
+    print("Output shape:", output.shape)
+
+    print("\nNumber of attention heads:", mha.num_heads)
+    print("Head dimension:", mha.head_dim)
+
+    # Check output dimensions
+    assert output.shape == (2, 100, 768)
+
+    print("\nMulti-Head Attention test passed!")
