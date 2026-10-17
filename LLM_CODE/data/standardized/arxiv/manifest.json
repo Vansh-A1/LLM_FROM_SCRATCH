@@ -1,0 +1,22 @@
+{
+  "source": "arxiv",
+  "input_documents": 5,
+  "output_documents": 5,
+  "failed_documents": 0,
+  "total_characters": 279267,
+  "min_characters": 35965,
+  "max_characters": 74372,
+  "mean_characters": 55853.4,
+  "raw_files": [
+    "raw/arxiv/paper_001.pdf",
+    "raw/arxiv/paper_002.pdf",
+    "raw/arxiv/paper_003.pdf",
+    "raw/arxiv/paper_004.pdf",
+    "raw/arxiv/paper_005.pdf"
+  ],
+  "extraction_methods": [
+    "pdf_embedded_text"
+  ],
+  "timestamp": "2026-10-02T11:32:34.344626+00:00",
+  "status": "COMPLETE"
+}

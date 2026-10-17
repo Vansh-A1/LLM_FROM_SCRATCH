@@ -1,0 +1,55 @@
+{
+  "source": "gutenberg",
+  "cleaning_version": "gutenberg_v1",
+  "input_file": "standardized/gutenberg/documents.jsonl",
+  "input_sha256_before": "ce41ca50211ee0b19cf5598c5c1727929d0af281cb522d1e9b1464a18ba44888",
+  "input_sha256_after": "ce41ca50211ee0b19cf5598c5c1727929d0af281cb522d1e9b1464a18ba44888",
+  "standardized_input_unchanged": true,
+  "input_documents": 3,
+  "output_documents": 3,
+  "failures": 0,
+  "original_characters": 1768905,
+  "cleaned_characters": 1712658,
+  "characters_removed": 56247,
+  "percentage_removed": 3.179763752151755,
+  "min_characters": 419881,
+  "max_characters": 728485,
+  "mean_characters": 570886.0,
+  "documents_with_zero_reduction": 0,
+  "documents_over_25_percent_reduction": 0,
+  "documents_over_50_percent_reduction": 0,
+  "documents_over_75_percent_reduction": 0,
+  "source_counters": {
+    "boundary_marker_characters_removed": 418,
+    "boundary_markers_removed": 6,
+    "control_characters_removed": 0,
+    "distribution_footer_characters_removed": 37347,
+    "distribution_header_characters_removed": 1875,
+    "footers_removed": 2,
+    "headers_removed": 2
+  },
+  "highest_reductions": [
+    {
+      "id": "gutenberg:84",
+      "original_characters": 450982,
+      "cleaned_characters": 419881,
+      "characters_removed": 31101,
+      "percentage_removed": 6.896284108900133
+    },
+    {
+      "id": "gutenberg:1661",
+      "original_characters": 589077,
+      "cleaned_characters": 564292,
+      "characters_removed": 24785,
+      "percentage_removed": 4.207429589001099
+    },
+    {
+      "id": "gutenberg:1342",
+      "original_characters": 728846,
+      "cleaned_characters": 728485,
+      "characters_removed": 361,
+      "percentage_removed": 0.04953035346287145
+    }
+  ],
+  "output_sha256": "45a6736990d638c9fc57b2a175260910c03053ecf5554b623edb8073cff79a34"
+}

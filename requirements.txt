@@ -1,3 +1,11 @@
+# Model, tokenizer, training, and plotting
 torch
 tiktoken
+matplotlib
 
+# Dataset acquisition and preparation scripts
+datasets
+pyarrow
+requests
+PyMuPDF
+mwparserfromhell

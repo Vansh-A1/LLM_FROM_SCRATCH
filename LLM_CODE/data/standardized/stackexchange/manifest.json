@@ -1,0 +1,18 @@
+{
+  "source": "stackexchange",
+  "input_documents": 100,
+  "output_documents": 100,
+  "failed_documents": 0,
+  "total_characters": 283001,
+  "min_characters": 308,
+  "max_characters": 14734,
+  "mean_characters": 2830.01,
+  "raw_files": [
+    "raw/stackexchange/stackexchange_pilot_100.jsonl"
+  ],
+  "extraction_methods": [
+    "jsonl_text_field"
+  ],
+  "timestamp": "2026-10-02T11:32:34.179888+00:00",
+  "status": "COMPLETE"
+}

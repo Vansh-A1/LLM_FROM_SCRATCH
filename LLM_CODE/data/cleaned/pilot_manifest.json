@@ -1,0 +1,557 @@
+{
+  "status": "complete",
+  "total_input_documents": 410,
+  "total_output_documents": 410,
+  "total_failures": 0,
+  "total_original_characters": 3914112,
+  "total_cleaned_characters": 3301764,
+  "total_removed_characters": 612348,
+  "overall_reduction_percentage": 15.644621308741295,
+  "unique_cleaned_ids": 410,
+  "cleaning_versions": {
+    "wikipedia": "wikipedia_wikitext_v1",
+    "fineweb": "fineweb_v1",
+    "code": "code_v1",
+    "stackexchange": "stackexchange_v1",
+    "gutenberg": "gutenberg_v1",
+    "arxiv": "arxiv_v1",
+    "scanned_docs": "scanned_docs_v1"
+  },
+  "sources": {
+    "wikipedia": {
+      "source": "wikipedia",
+      "cleaning_version": "wikipedia_wikitext_v1",
+      "input_file": "standardized/wikipedia/documents.jsonl",
+      "input_sha256_before": "127428b37c0172a0e02751ba5305d1578804a2406f08b64b0418b5d809cbf0d7",
+      "input_sha256_after": "127428b37c0172a0e02751ba5305d1578804a2406f08b64b0418b5d809cbf0d7",
+      "standardized_input_unchanged": true,
+      "input_documents": 100,
+      "output_documents": 100,
+      "failures": 0,
+      "original_characters": 787994,
+      "cleaned_characters": 232664,
+      "characters_removed": 555330,
+      "percentage_removed": 70.47388685700653,
+      "min_characters": 63,
+      "max_characters": 13799,
+      "mean_characters": 2326.64,
+      "documents_with_zero_reduction": 0,
+      "documents_over_25_percent_reduction": 94,
+      "documents_over_50_percent_reduction": 75,
+      "documents_over_75_percent_reduction": 37,
+      "source_counters": {
+        "category_links_removed": 558,
+        "comments_removed": 5,
+        "control_characters_removed": 0,
+        "interwiki_links_removed": 0,
+        "media_links_removed": 20,
+        "nonvisible_tags_removed": 1,
+        "orphan_table_markers_removed": 1,
+        "reference_lists_removed": 4,
+        "references_removed": 1054,
+        "residual_list_markers_removed": 2,
+        "tables_removed": 35,
+        "template_arguments_removed": 0,
+        "templates_removed": 1103,
+        "unlabeled_external_links_removed": 6,
+        "unmatched_formatting_runs_removed": 2
+      },
+      "highest_reductions": [
+        {
+          "id": "wikipedia:60438039:1377444945",
+          "original_characters": 34727,
+          "cleaned_characters": 199,
+          "characters_removed": 34528,
+          "percentage_removed": 99.42695885046217
+        },
+        {
+          "id": "wikipedia:21161722:1336774007",
+          "original_characters": 31633,
+          "cleaned_characters": 438,
+          "characters_removed": 31195,
+          "percentage_removed": 98.61537002497393
+        },
+        {
+          "id": "wikipedia:12838351:1367152860",
+          "original_characters": 1113,
+          "cleaned_characters": 63,
+          "characters_removed": 1050,
+          "percentage_removed": 94.33962264150944
+        }
+      ],
+      "output_sha256": "5ec44faf7ae830da8a64adafaccfeac66e15afadd761c5c9c7265fbf81d9f629"
+    },
+    "fineweb": {
+      "source": "fineweb",
+      "cleaning_version": "fineweb_v1",
+      "input_file": "standardized/fineweb/documents.jsonl",
+      "input_sha256_before": "6b48e998865223f2ae4003551de3aba3e145174910856a6e5621d32ebcb26652",
+      "input_sha256_after": "6b48e998865223f2ae4003551de3aba3e145174910856a6e5621d32ebcb26652",
+      "standardized_input_unchanged": true,
+      "input_documents": 100,
+      "output_documents": 100,
+      "failures": 0,
+      "original_characters": 369106,
+      "cleaned_characters": 369095,
+      "characters_removed": 11,
+      "percentage_removed": 0.0029801737170352146,
+      "min_characters": 448,
+      "max_characters": 17410,
+      "mean_characters": 3690.95,
+      "documents_with_zero_reduction": 99,
+      "documents_over_25_percent_reduction": 0,
+      "documents_over_50_percent_reduction": 0,
+      "documents_over_75_percent_reduction": 0,
+      "source_counters": {
+        "control_characters_removed": 0
+      },
+      "highest_reductions": [
+        {
+          "id": "fineweb:<urn:uuid:7ab562e2-c61b-4988-9c51-24c5b3cb1d20>",
+          "original_characters": 7732,
+          "cleaned_characters": 7721,
+          "characters_removed": 11,
+          "percentage_removed": 0.14226590791515778
+        },
+        {
+          "id": "fineweb:<urn:uuid:003baaf4-69c7-4ee7-b37f-468bf9b55842>",
+          "original_characters": 9052,
+          "cleaned_characters": 9052,
+          "characters_removed": 0,
+          "percentage_removed": 0.0
+        },
+        {
+          "id": "fineweb:<urn:uuid:0428aaca-1b84-4407-9b6f-93b230a692b3>",
+          "original_characters": 2653,
+          "cleaned_characters": 2653,
+          "characters_removed": 0,
+          "percentage_removed": 0.0
+        }
+      ],
+      "output_sha256": "f3efd59cdb10f45b4c432bf046ba5db5168dd3d6edfe7aa435b8fd82df2bf283"
+    },
+    "code": {
+      "source": "code",
+      "cleaning_version": "code_v1",
+      "input_file": "standardized/code/documents.jsonl",
+      "input_sha256_before": "9ee68463536a5cb58308a2c38d37f4db741a717f3c0f48033b01d83d5ef55b7d",
+      "input_sha256_after": "9ee68463536a5cb58308a2c38d37f4db741a717f3c0f48033b01d83d5ef55b7d",
+      "standardized_input_unchanged": true,
+      "input_documents": 100,
+      "output_documents": 100,
+      "failures": 0,
+      "original_characters": 404519,
+      "cleaned_characters": 404519,
+      "characters_removed": 0,
+      "percentage_removed": 0.0,
+      "min_characters": 72,
+      "max_characters": 90660,
+      "mean_characters": 4045.19,
+      "documents_with_zero_reduction": 100,
+      "documents_over_25_percent_reduction": 0,
+      "documents_over_50_percent_reduction": 0,
+      "documents_over_75_percent_reduction": 0,
+      "source_counters": {
+        "control_characters_removed": 0
+      },
+      "highest_reductions": [
+        {
+          "id": "code:057221694126e9258cfa78a65df2c3cc1242a2d6",
+          "original_characters": 2625,
+          "cleaned_characters": 2625,
+          "characters_removed": 0,
+          "percentage_removed": 0.0
+        },
+        {
+          "id": "code:08242c9905e5aa75275e91bcf4362f9d2dce2857",
+          "original_characters": 2625,
+          "cleaned_characters": 2625,
+          "characters_removed": 0,
+          "percentage_removed": 0.0
+        },
+        {
+          "id": "code:0a9db4838a49b7bf7d7d0139fb8cf566d8da4952",
+          "original_characters": 2345,
+          "cleaned_characters": 2345,
+          "characters_removed": 0,
+          "percentage_removed": 0.0
+        }
+      ],
+      "output_sha256": "e8915deb1c643b08d222e82a722a6932e6e066d8e9cca88db471d5cd17a04e9d"
+    },
+    "stackexchange": {
+      "source": "stackexchange",
+      "cleaning_version": "stackexchange_v1",
+      "input_file": "standardized/stackexchange/documents.jsonl",
+      "input_sha256_before": "f759782237438862e255f8d99597a2cd28e0c649879635bd83cafcfc7bfcb3bb",
+      "input_sha256_after": "f759782237438862e255f8d99597a2cd28e0c649879635bd83cafcfc7bfcb3bb",
+      "standardized_input_unchanged": true,
+      "input_documents": 100,
+      "output_documents": 100,
+      "failures": 0,
+      "original_characters": 283001,
+      "cleaned_characters": 282758,
+      "characters_removed": 243,
+      "percentage_removed": 0.08586542097024392,
+      "min_characters": 307,
+      "max_characters": 14732,
+      "mean_characters": 2827.58,
+      "documents_with_zero_reduction": 0,
+      "documents_over_25_percent_reduction": 0,
+      "documents_over_50_percent_reduction": 0,
+      "documents_over_75_percent_reduction": 0,
+      "source_counters": {
+        "control_characters_removed": 0
+      },
+      "highest_reductions": [
+        {
+          "id": "stackexchange:192",
+          "original_characters": 1442,
+          "cleaned_characters": 1436,
+          "characters_removed": 6,
+          "percentage_removed": 0.4160887656033287
+        },
+        {
+          "id": "stackexchange:359",
+          "original_characters": 595,
+          "cleaned_characters": 593,
+          "characters_removed": 2,
+          "percentage_removed": 0.33613445378151263
+        },
+        {
+          "id": "stackexchange:474",
+          "original_characters": 308,
+          "cleaned_characters": 307,
+          "characters_removed": 1,
+          "percentage_removed": 0.3246753246753247
+        }
+      ],
+      "output_sha256": "47bbcdc50b1a2a04d034bc80130f3221384a8e57f5110a328776e0c2b0ebd1de"
+    },
+    "gutenberg": {
+      "source": "gutenberg",
+      "cleaning_version": "gutenberg_v1",
+      "input_file": "standardized/gutenberg/documents.jsonl",
+      "input_sha256_before": "ce41ca50211ee0b19cf5598c5c1727929d0af281cb522d1e9b1464a18ba44888",
+      "input_sha256_after": "ce41ca50211ee0b19cf5598c5c1727929d0af281cb522d1e9b1464a18ba44888",
+      "standardized_input_unchanged": true,
+      "input_documents": 3,
+      "output_documents": 3,
+      "failures": 0,
+      "original_characters": 1768905,
+      "cleaned_characters": 1712658,
+      "characters_removed": 56247,
+      "percentage_removed": 3.179763752151755,
+      "min_characters": 419881,
+      "max_characters": 728485,
+      "mean_characters": 570886.0,
+      "documents_with_zero_reduction": 0,
+      "documents_over_25_percent_reduction": 0,
+      "documents_over_50_percent_reduction": 0,
+      "documents_over_75_percent_reduction": 0,
+      "source_counters": {
+        "boundary_marker_characters_removed": 418,
+        "boundary_markers_removed": 6,
+        "control_characters_removed": 0,
+        "distribution_footer_characters_removed": 37347,
+        "distribution_header_characters_removed": 1875,
+        "footers_removed": 2,
+        "headers_removed": 2
+      },
+      "highest_reductions": [
+        {
+          "id": "gutenberg:84",
+          "original_characters": 450982,
+          "cleaned_characters": 419881,
+          "characters_removed": 31101,
+          "percentage_removed": 6.896284108900133
+        },
+        {
+          "id": "gutenberg:1661",
+          "original_characters": 589077,
+          "cleaned_characters": 564292,
+          "characters_removed": 24785,
+          "percentage_removed": 4.207429589001099
+        },
+        {
+          "id": "gutenberg:1342",
+          "original_characters": 728846,
+          "cleaned_characters": 728485,
+          "characters_removed": 361,
+          "percentage_removed": 0.04953035346287145
+        }
+      ],
+      "output_sha256": "45a6736990d638c9fc57b2a175260910c03053ecf5554b623edb8073cff79a34"
+    },
+    "arxiv": {
+      "source": "arxiv",
+      "cleaning_version": "arxiv_v1",
+      "input_file": "standardized/arxiv/documents.jsonl",
+      "input_sha256_before": "61d292f58c3eb2d18e7b9445ea0ebdec82f47fe74a6e9efd7b6e562cfcc3a092",
+      "input_sha256_after": "61d292f58c3eb2d18e7b9445ea0ebdec82f47fe74a6e9efd7b6e562cfcc3a092",
+      "standardized_input_unchanged": true,
+      "input_documents": 5,
+      "output_documents": 5,
+      "failures": 0,
+      "original_characters": 279267,
+      "cleaned_characters": 278866,
+      "characters_removed": 401,
+      "percentage_removed": 0.14359018430390988,
+      "min_characters": 35776,
+      "max_characters": 74351,
+      "mean_characters": 55773.2,
+      "documents_with_zero_reduction": 0,
+      "documents_over_25_percent_reduction": 0,
+      "documents_over_50_percent_reduction": 0,
+      "documents_over_75_percent_reduction": 0,
+      "source_counters": {
+        "control_characters_removed": 217,
+        "repeated_headers_or_footers_removed": 0
+      },
+      "highest_reductions": [
+        {
+          "id": "arxiv:1603.04246",
+          "original_characters": 35965,
+          "cleaned_characters": 35776,
+          "characters_removed": 189,
+          "percentage_removed": 0.5255109133880161
+        },
+        {
+          "id": "arxiv:2301.09573",
+          "original_characters": 61037,
+          "cleaned_characters": 60888,
+          "characters_removed": 149,
+          "percentage_removed": 0.2441142257974671
+        },
+        {
+          "id": "arxiv:1706.03762",
+          "original_characters": 39932,
+          "cleaned_characters": 39916,
+          "characters_removed": 16,
+          "percentage_removed": 0.04006811579685465
+        },
+        {
+          "id": "arxiv:2010.11929",
+          "original_characters": 67961,
+          "cleaned_characters": 67935,
+          "characters_removed": 26,
+          "percentage_removed": 0.038257235767572575
+        },
+        {
+          "id": "arxiv:1602.03837",
+          "original_characters": 74372,
+          "cleaned_characters": 74351,
+          "characters_removed": 21,
+          "percentage_removed": 0.02823643306620771
+        }
+      ],
+      "output_sha256": "7ee686c18af7bb9b428c0379b5a397ecd9ca585536fee365346ebd3f9498f721"
+    },
+    "scanned_docs": {
+      "source": "scanned_docs",
+      "cleaning_version": "scanned_docs_v1",
+      "input_file": "standardized/scanned_docs/documents.jsonl",
+      "input_sha256_before": "c5bdeb54535216bb22a7032a9631f1193ebe37b4933b83e475fb96a463b72d82",
+      "input_sha256_after": "c5bdeb54535216bb22a7032a9631f1193ebe37b4933b83e475fb96a463b72d82",
+      "standardized_input_unchanged": true,
+      "input_documents": 2,
+      "output_documents": 2,
+      "failures": 0,
+      "original_characters": 21320,
+      "cleaned_characters": 21204,
+      "characters_removed": 116,
+      "percentage_removed": 0.5440900562851783,
+      "min_characters": 7378,
+      "max_characters": 13826,
+      "mean_characters": 10602.0,
+      "documents_with_zero_reduction": 0,
+      "documents_over_25_percent_reduction": 0,
+      "documents_over_50_percent_reduction": 0,
+      "documents_over_75_percent_reduction": 0,
+      "source_counters": {
+        "control_characters_removed": 0,
+        "ocr_executions": 0
+      },
+      "highest_reductions": [
+        {
+          "id": "scanned_docs:scan_001",
+          "original_characters": 7433,
+          "cleaned_characters": 7378,
+          "characters_removed": 55,
+          "percentage_removed": 0.739943495224001
+        },
+        {
+          "id": "scanned_docs:scan_002",
+          "original_characters": 13887,
+          "cleaned_characters": 13826,
+          "characters_removed": 61,
+          "percentage_removed": 0.4392597393245481
+        }
+      ],
+      "output_sha256": "7f6de0f1567709fed9886df2d38bb7ef3769414509f34b5ef3ddc355dbf6c997"
+    }
+  },
+  "validation": {
+    "input_documents": 410,
+    "output_documents": 410,
+    "unique_cleaned_ids": 410,
+    "source_counts": {
+      "wikipedia": {
+        "input": 100,
+        "output": 100
+      },
+      "fineweb": {
+        "input": 100,
+        "output": 100
+      },
+      "code": {
+        "input": 100,
+        "output": 100
+      },
+      "stackexchange": {
+        "input": 100,
+        "output": 100
+      },
+      "gutenberg": {
+        "input": 3,
+        "output": 3
+      },
+      "arxiv": {
+        "input": 5,
+        "output": 5
+      },
+      "scanned_docs": {
+        "input": 2,
+        "output": 2
+      }
+    },
+    "id_set_matches_standardized": true,
+    "all_ids_unique": true,
+    "all_jsonl_valid": true,
+    "all_schemas_valid": true,
+    "existing_metadata_preserved": true,
+    "no_empty_documents": true,
+    "wikipedia_regression": true,
+    "standardized_inputs_unchanged": true,
+    "raw_files_unchanged": true,
+    "protected_pilot_unchanged": true,
+    "repeat_run_reproducibility": true
+  },
+  "immutable_checksums_before": {
+    "clean_pilot/clean_wikipedia_one.py": "d7d8eaab298a65c6ed2da933067a98a3f42247cc0ab2c2a13d10df752d274ae4",
+    "cleaned/wikipedia/sample_001_cleaned.json": "dd8ea5675ed6b06bd7c70c5510fa7b1ebe2e21bbc2e627ea6371b84448eabaad",
+    "cleaned/wikipedia/sample_001_comparison.txt": "62ca5390fee5d68b36acf8603cbb42564a618b200ea18c4d0649cd8b7e2a5dd7",
+    "raw/arxiv/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/arxiv/paper_001.pdf": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+    "raw/arxiv/paper_002.pdf": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+    "raw/arxiv/paper_003.pdf": "f9f3a16da44702bb812d8db28ef5cb53bd4904fc6815a9be9ea80b653e341ac7",
+    "raw/arxiv/paper_004.pdf": "e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4",
+    "raw/arxiv/paper_005.pdf": "7a660a5500517b69036bc477dc10a5cea03a3d1be01b9627260676e4cbd0f4d8",
+    "raw/code/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/code/stackv2_edu_pilot_100.jsonl": "c75908e91b4a3aded884d1ad9fdb5d369bac757ad58cf48c2d846624962702d7",
+    "raw/fineweb/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/fineweb/fineweb_edu_pilot_100.jsonl": "bc779995743069f754c473a916e0d3b3d36d828e06dce787f1f411c4d641fe12",
+    "raw/gutenberg/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/gutenberg/frankenstein/frankenstein.html": "23403a6a3b1cace42a06d6c378a6f1acf8ec97c940c652d12fe3c0d30275e58f",
+    "raw/gutenberg/pride_and_prejudice/pride_and_prejudice.txt": "81300b79e8a8d65ac530a97578417d06137e3bbc90622a10a65e5036183d2500",
+    "raw/gutenberg/sherlock_holmes/sherlock_holmes.epub": "dad985e2300b30e6a5459444fb78ee1675c766411b62bdb3d6a21314cc927331",
+    "raw/scanned_docs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/scanned_docs/scan_001.pdf": "d4c31f3126a94cb990b70a561eaa2a4e3d87aafb55d01283c90b773016724c19",
+    "raw/scanned_docs/scan_002.pdf": "971182ef26af4c08abc983f532b231579f3f10ffb7a8986447053f68c95903ad",
+    "raw/stackexchange/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/stackexchange/stackexchange_pilot_100.jsonl": "3b29c418ec9f9e488b8c6f5b9ad09f9a717ef69145922c8e40b8d932358b6884",
+    "raw/wikipedia/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/wikipedia/articles_000.json": "cde8c49ad5768b59bb4f724c5b210f1e7c096b195277409b65a4c1d1648e5756",
+    "raw/wikipedia/articles_001.json": "0816d55d2511dd1be68a64dab7e497612b189f97ae6b9d75ee4fb3f25fc021ef",
+    "raw/wikipedia/articles_002.json": "45f1edb41a30a86302e0e4c85960c3ce31cb7c5bd566102b4b5b16b71caa188b",
+    "raw/wikipedia/articles_003.json": "c98cc89c50b2a4afaa890936a0c2f33281813c7c160fdb5aa0e6621c023ec96a",
+    "raw/wikipedia/articles_004.json": "411b2e6774cceeed45f76d58b2d6526d568926aa7f74c295130c8509d60b8660",
+    "raw/wikipedia/random_selection.json": "e58def51a72975241c5acc18ea59e445f89c15a49dc9451c4174f5b2d90578c6",
+    "standardized/README.md": "9f4c29c8237155fe05a14c9f7f6e473ff8123ae710de25431f07ace70593ff5a",
+    "standardized/arxiv/documents.jsonl": "61d292f58c3eb2d18e7b9445ea0ebdec82f47fe74a6e9efd7b6e562cfcc3a092",
+    "standardized/arxiv/manifest.json": "51c811e4b031e44f1b2d588fbba507c98c93db1669332b6d229f3133774752c9",
+    "standardized/code/documents.jsonl": "9ee68463536a5cb58308a2c38d37f4db741a717f3c0f48033b01d83d5ef55b7d",
+    "standardized/code/manifest.json": "ae42d8bd8c9f3ad6ae843b4f49b44c29d5673f5e39269ce58c6c92adcb3491d7",
+    "standardized/errors/errors.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "standardized/fineweb/documents.jsonl": "6b48e998865223f2ae4003551de3aba3e145174910856a6e5621d32ebcb26652",
+    "standardized/fineweb/manifest.json": "6f44840ae24672dfd7a6f977e11b2b810817c7770a25a249723beb6ae8e22077",
+    "standardized/gutenberg/documents.jsonl": "ce41ca50211ee0b19cf5598c5c1727929d0af281cb522d1e9b1464a18ba44888",
+    "standardized/gutenberg/manifest.json": "d9a21f8955a110cb71e25f358005ba6d7341c7ef0dc5196aeb729d4d1587e68d",
+    "standardized/pilot_manifest.json": "52976d95092775c27db37ed70276dea4f2ead61b3528355c5b2e028e14fe1330",
+    "standardized/scanned_docs/documents.jsonl": "c5bdeb54535216bb22a7032a9631f1193ebe37b4933b83e475fb96a463b72d82",
+    "standardized/scanned_docs/manifest.json": "d6e90e49201cda1c311dfbd261060d149a314241c5b5492d94d0bf9dc6b0a4d3",
+    "standardized/stackexchange/documents.jsonl": "f759782237438862e255f8d99597a2cd28e0c649879635bd83cafcfc7bfcb3bb",
+    "standardized/stackexchange/manifest.json": "6a72f00c668e88c22113df2d4c27c03e53ce49a681ea6e79a619671c16dd657a",
+    "standardized/wikipedia/documents.jsonl": "127428b37c0172a0e02751ba5305d1578804a2406f08b64b0418b5d809cbf0d7",
+    "standardized/wikipedia/manifest.json": "8d96b952830424246cdb8a39c33148746b9774fced44cb558ae1d6a346fa4b89",
+    "standardized/wikipedia/sample_001.json": "3738a19cbe921558505a93cdd6cd1f5677b00baec0907f529c85f23ba65fc1fb"
+  },
+  "immutable_checksums_after": {
+    "clean_pilot/clean_wikipedia_one.py": "d7d8eaab298a65c6ed2da933067a98a3f42247cc0ab2c2a13d10df752d274ae4",
+    "cleaned/wikipedia/sample_001_cleaned.json": "dd8ea5675ed6b06bd7c70c5510fa7b1ebe2e21bbc2e627ea6371b84448eabaad",
+    "cleaned/wikipedia/sample_001_comparison.txt": "62ca5390fee5d68b36acf8603cbb42564a618b200ea18c4d0649cd8b7e2a5dd7",
+    "raw/arxiv/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/arxiv/paper_001.pdf": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+    "raw/arxiv/paper_002.pdf": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+    "raw/arxiv/paper_003.pdf": "f9f3a16da44702bb812d8db28ef5cb53bd4904fc6815a9be9ea80b653e341ac7",
+    "raw/arxiv/paper_004.pdf": "e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4",
+    "raw/arxiv/paper_005.pdf": "7a660a5500517b69036bc477dc10a5cea03a3d1be01b9627260676e4cbd0f4d8",
+    "raw/code/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/code/stackv2_edu_pilot_100.jsonl": "c75908e91b4a3aded884d1ad9fdb5d369bac757ad58cf48c2d846624962702d7",
+    "raw/fineweb/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/fineweb/fineweb_edu_pilot_100.jsonl": "bc779995743069f754c473a916e0d3b3d36d828e06dce787f1f411c4d641fe12",
+    "raw/gutenberg/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/gutenberg/frankenstein/frankenstein.html": "23403a6a3b1cace42a06d6c378a6f1acf8ec97c940c652d12fe3c0d30275e58f",
+    "raw/gutenberg/pride_and_prejudice/pride_and_prejudice.txt": "81300b79e8a8d65ac530a97578417d06137e3bbc90622a10a65e5036183d2500",
+    "raw/gutenberg/sherlock_holmes/sherlock_holmes.epub": "dad985e2300b30e6a5459444fb78ee1675c766411b62bdb3d6a21314cc927331",
+    "raw/scanned_docs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/scanned_docs/scan_001.pdf": "d4c31f3126a94cb990b70a561eaa2a4e3d87aafb55d01283c90b773016724c19",
+    "raw/scanned_docs/scan_002.pdf": "971182ef26af4c08abc983f532b231579f3f10ffb7a8986447053f68c95903ad",
+    "raw/stackexchange/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/stackexchange/stackexchange_pilot_100.jsonl": "3b29c418ec9f9e488b8c6f5b9ad09f9a717ef69145922c8e40b8d932358b6884",
+    "raw/wikipedia/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/wikipedia/articles_000.json": "cde8c49ad5768b59bb4f724c5b210f1e7c096b195277409b65a4c1d1648e5756",
+    "raw/wikipedia/articles_001.json": "0816d55d2511dd1be68a64dab7e497612b189f97ae6b9d75ee4fb3f25fc021ef",
+    "raw/wikipedia/articles_002.json": "45f1edb41a30a86302e0e4c85960c3ce31cb7c5bd566102b4b5b16b71caa188b",
+    "raw/wikipedia/articles_003.json": "c98cc89c50b2a4afaa890936a0c2f33281813c7c160fdb5aa0e6621c023ec96a",
+    "raw/wikipedia/articles_004.json": "411b2e6774cceeed45f76d58b2d6526d568926aa7f74c295130c8509d60b8660",
+    "raw/wikipedia/random_selection.json": "e58def51a72975241c5acc18ea59e445f89c15a49dc9451c4174f5b2d90578c6",
+    "standardized/README.md": "9f4c29c8237155fe05a14c9f7f6e473ff8123ae710de25431f07ace70593ff5a",
+    "standardized/arxiv/documents.jsonl": "61d292f58c3eb2d18e7b9445ea0ebdec82f47fe74a6e9efd7b6e562cfcc3a092",
+    "standardized/arxiv/manifest.json": "51c811e4b031e44f1b2d588fbba507c98c93db1669332b6d229f3133774752c9",
+    "standardized/code/documents.jsonl": "9ee68463536a5cb58308a2c38d37f4db741a717f3c0f48033b01d83d5ef55b7d",
+    "standardized/code/manifest.json": "ae42d8bd8c9f3ad6ae843b4f49b44c29d5673f5e39269ce58c6c92adcb3491d7",
+    "standardized/errors/errors.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "standardized/fineweb/documents.jsonl": "6b48e998865223f2ae4003551de3aba3e145174910856a6e5621d32ebcb26652",
+    "standardized/fineweb/manifest.json": "6f44840ae24672dfd7a6f977e11b2b810817c7770a25a249723beb6ae8e22077",
+    "standardized/gutenberg/documents.jsonl": "ce41ca50211ee0b19cf5598c5c1727929d0af281cb522d1e9b1464a18ba44888",
+    "standardized/gutenberg/manifest.json": "d9a21f8955a110cb71e25f358005ba6d7341c7ef0dc5196aeb729d4d1587e68d",
+    "standardized/pilot_manifest.json": "52976d95092775c27db37ed70276dea4f2ead61b3528355c5b2e028e14fe1330",
+    "standardized/scanned_docs/documents.jsonl": "c5bdeb54535216bb22a7032a9631f1193ebe37b4933b83e475fb96a463b72d82",
+    "standardized/scanned_docs/manifest.json": "d6e90e49201cda1c311dfbd261060d149a314241c5b5492d94d0bf9dc6b0a4d3",
+    "standardized/stackexchange/documents.jsonl": "f759782237438862e255f8d99597a2cd28e0c649879635bd83cafcfc7bfcb3bb",
+    "standardized/stackexchange/manifest.json": "6a72f00c668e88c22113df2d4c27c03e53ce49a681ea6e79a619671c16dd657a",
+    "standardized/wikipedia/documents.jsonl": "127428b37c0172a0e02751ba5305d1578804a2406f08b64b0418b5d809cbf0d7",
+    "standardized/wikipedia/manifest.json": "8d96b952830424246cdb8a39c33148746b9774fced44cb558ae1d6a346fa4b89",
+    "standardized/wikipedia/sample_001.json": "3738a19cbe921558505a93cdd6cd1f5677b00baec0907f529c85f23ba65fc1fb"
+  },
+  "output_jsonl_checksums": {
+    "wikipedia": "5ec44faf7ae830da8a64adafaccfeac66e15afadd761c5c9c7265fbf81d9f629",
+    "fineweb": "f3efd59cdb10f45b4c432bf046ba5db5168dd3d6edfe7aa435b8fd82df2bf283",
+    "code": "e8915deb1c643b08d222e82a722a6932e6e066d8e9cca88db471d5cd17a04e9d",
+    "stackexchange": "47bbcdc50b1a2a04d034bc80130f3221384a8e57f5110a328776e0c2b0ebd1de",
+    "gutenberg": "45a6736990d638c9fc57b2a175260910c03053ecf5554b623edb8073cff79a34",
+    "arxiv": "7ee686c18af7bb9b428c0379b5a397ecd9ca585536fee365346ebd3f9498f721",
+    "scanned_docs": "7f6de0f1567709fed9886df2d38bb7ef3769414509f34b5ef3ddc355dbf6c997"
+  },
+  "repeat_run_previous_jsonl_checksums": {
+    "wikipedia": "5ec44faf7ae830da8a64adafaccfeac66e15afadd761c5c9c7265fbf81d9f629",
+    "fineweb": "f3efd59cdb10f45b4c432bf046ba5db5168dd3d6edfe7aa435b8fd82df2bf283",
+    "code": "e8915deb1c643b08d222e82a722a6932e6e066d8e9cca88db471d5cd17a04e9d",
+    "stackexchange": "47bbcdc50b1a2a04d034bc80130f3221384a8e57f5110a328776e0c2b0ebd1de",
+    "gutenberg": "45a6736990d638c9fc57b2a175260910c03053ecf5554b623edb8073cff79a34",
+    "arxiv": "7ee686c18af7bb9b428c0379b5a397ecd9ca585536fee365346ebd3f9498f721",
+    "scanned_docs": "7f6de0f1567709fed9886df2d38bb7ef3769414509f34b5ef3ddc355dbf6c997"
+  },
+  "ocr_executed_by_us": false
+}

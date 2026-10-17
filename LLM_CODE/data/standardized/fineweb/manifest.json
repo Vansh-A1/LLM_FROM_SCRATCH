@@ -1,0 +1,18 @@
+{
+  "source": "fineweb",
+  "input_documents": 100,
+  "output_documents": 100,
+  "failed_documents": 0,
+  "total_characters": 369106,
+  "min_characters": 448,
+  "max_characters": 17410,
+  "mean_characters": 3691.06,
+  "raw_files": [
+    "raw/fineweb/fineweb_edu_pilot_100.jsonl"
+  ],
+  "extraction_methods": [
+    "jsonl_text_field"
+  ],
+  "timestamp": "2026-10-02T11:32:34.047897+00:00",
+  "status": "COMPLETE"
+}

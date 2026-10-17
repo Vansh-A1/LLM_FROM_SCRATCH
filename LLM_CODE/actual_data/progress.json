@@ -1,0 +1,60 @@
+{
+  "next_shard": 4,
+  "next_row": 184872,
+  "scanned_documents": 3100872,
+  "rejected": {
+    "language_quality": 54592,
+    "too_short": 6307,
+    "overlong_document": 1657,
+    "duplicate_content_or_url": 47767,
+    "encoding_noise": 529,
+    "repeated_character_noise": 9,
+    "unextracted_html": 3,
+    "reserved_token_literal": 1
+  },
+  "source_files": [
+    {
+      "path": "sample/10BT/000_00000.parquet",
+      "bytes": 2152819114,
+      "sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871"
+    },
+    {
+      "path": "sample/10BT/001_00000.parquet",
+      "bytes": 2152222432,
+      "sha256": "3fcf2dc69cd52503986276d3d2d26a8c356d0f2ea28a0de4fdbda8cf87755693"
+    },
+    {
+      "path": "sample/10BT/002_00000.parquet",
+      "bytes": 2151796315,
+      "sha256": "547ae182d132c9f06b6ce63149567208ea9f57630bfd9b1a2938e504f0c9ebd7"
+    },
+    {
+      "path": "sample/10BT/003_00000.parquet",
+      "bytes": 2152437524,
+      "sha256": "22184e6eb25759ddd97783751ffc73e1705dfa2542e630dae1f2a8bac8ee6ddb"
+    },
+    {
+      "path": "sample/10BT/004_00000.parquet",
+      "bytes": 2152338550,
+      "sha256": "33557ddd87a07a4ae6fcaf7a4789c7b484e5cc0c273ca12a65b74200e6d8748b"
+    }
+  ],
+  "splits": {
+    "train": {
+      "documents": 2961683,
+      "bytes": 13921892743,
+      "index_bytes": 1906250276,
+      "characters": 13845699117,
+      "original_characters": 13846027055,
+      "source_reported_gpt2_tokens_before_local_cleaning": 3000000844
+    },
+    "validation": {
+      "documents": 28324,
+      "bytes": 131673680,
+      "index_bytes": 18122543,
+      "characters": 130972764,
+      "original_characters": 130975364,
+      "source_reported_gpt2_tokens_before_local_cleaning": 28225002
+    }
+  }
+}

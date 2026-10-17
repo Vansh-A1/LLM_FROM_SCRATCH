@@ -1,0 +1,64 @@
+{
+  "source": "arxiv",
+  "cleaning_version": "arxiv_v1",
+  "input_file": "standardized/arxiv/documents.jsonl",
+  "input_sha256_before": "61d292f58c3eb2d18e7b9445ea0ebdec82f47fe74a6e9efd7b6e562cfcc3a092",
+  "input_sha256_after": "61d292f58c3eb2d18e7b9445ea0ebdec82f47fe74a6e9efd7b6e562cfcc3a092",
+  "standardized_input_unchanged": true,
+  "input_documents": 5,
+  "output_documents": 5,
+  "failures": 0,
+  "original_characters": 279267,
+  "cleaned_characters": 278866,
+  "characters_removed": 401,
+  "percentage_removed": 0.14359018430390988,
+  "min_characters": 35776,
+  "max_characters": 74351,
+  "mean_characters": 55773.2,
+  "documents_with_zero_reduction": 0,
+  "documents_over_25_percent_reduction": 0,
+  "documents_over_50_percent_reduction": 0,
+  "documents_over_75_percent_reduction": 0,
+  "source_counters": {
+    "control_characters_removed": 217,
+    "repeated_headers_or_footers_removed": 0
+  },
+  "highest_reductions": [
+    {
+      "id": "arxiv:1603.04246",
+      "original_characters": 35965,
+      "cleaned_characters": 35776,
+      "characters_removed": 189,
+      "percentage_removed": 0.5255109133880161
+    },
+    {
+      "id": "arxiv:2301.09573",
+      "original_characters": 61037,
+      "cleaned_characters": 60888,
+      "characters_removed": 149,
+      "percentage_removed": 0.2441142257974671
+    },
+    {
+      "id": "arxiv:1706.03762",
+      "original_characters": 39932,
+      "cleaned_characters": 39916,
+      "characters_removed": 16,
+      "percentage_removed": 0.04006811579685465
+    },
+    {
+      "id": "arxiv:2010.11929",
+      "original_characters": 67961,
+      "cleaned_characters": 67935,
+      "characters_removed": 26,
+      "percentage_removed": 0.038257235767572575
+    },
+    {
+      "id": "arxiv:1602.03837",
+      "original_characters": 74372,
+      "cleaned_characters": 74351,
+      "characters_removed": 21,
+      "percentage_removed": 0.02823643306620771
+    }
+  ],
+  "output_sha256": "7ee686c18af7bb9b428c0379b5a397ecd9ca585536fee365346ebd3f9498f721"
+}

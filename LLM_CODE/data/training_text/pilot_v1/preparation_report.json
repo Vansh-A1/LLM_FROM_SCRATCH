@@ -1,0 +1,12 @@
+{
+  "input_documents": 410,
+  "kept_documents": 410,
+  "exact_duplicates_removed": 0,
+  "duplicate_provenance": [],
+  "flags_are_not_filters": true,
+  "flagged_documents": 39,
+  "eligibility_checks": "Cleaned checksums, UTF-8, schema, unique IDs, nonempty text.",
+  "quality_policy": "Retain valid pilot text; record known OCR/large-cleaning-loss flags.",
+  "split_policy": "Seed 42; whole documents; source-stratified ~10% holdout; minimum one per source with 2+ records.",
+  "notes": "Small-source holdout ratios are higher than 10%; validation is a pilot smoke test."
+}

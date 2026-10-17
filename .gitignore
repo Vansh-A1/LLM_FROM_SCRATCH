@@ -1,3 +1,18 @@
+# Raw LLM training datasets
+**/data/raw/**
+
+# Allow directories and placeholder files so the raw structure remains in Git
+!**/data/raw/**/
+!**/data/raw/**/.gitkeep
+
+# Generated standardized pilot corpus and temporary outputs
+**/data/standardized/**/*.jsonl
+**/data/standardized/**/*.tmp
+
+# Standardization Python bytecode
+**/data/standardize_pilot/__pycache__/
+
+# Python caches and local environments
 __pycache__/
 *.py[cod]
 *$py.class
@@ -5,3 +20,26 @@ __pycache__/
 .venv/
 env/
 venv/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Model weights, checkpoints, and generated training outputs
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+**/pilot_run/
+
+# Generated corpus contents; keep source code, manifests, and documentation
+**/data/cleaned/**/*.jsonl
+**/data/cleaned/**/*.txt
+**/data/cleaned/wikipedia/sample_*.json
+**/data/standardized/wikipedia/sample_*.json
+**/data/training_text/**/*.jsonl
+**/data/training_text/**/*.txt
+
+# Unrelated local personal image
+/Adobe Express - file.png

@@ -2,44 +2,55 @@
 
 **Building a language model one component at a time, with Python and PyTorch.**
 
-This is my ongoing implementation journal for understanding how text becomes tokens, how training examples are constructed, and how neural networks learn to predict the next token. Each stage connects a small, readable implementation to the idea behind it.
+This is my implementation journal for understanding how text becomes tokens,
+how training examples are constructed, and how a Transformer learns to predict
+the next token. The code is kept readable so each part can be studied separately.
 
-> **Current stage:** language-model foundations — tokenization, sliding-window input/target pairs, and token embeddings. Attention, the Transformer model, and end-to-end training are the next milestones.
+> **Current stage:** a GPT-style model and a short pilot training loop, including
+> held-out validation, gradient clipping, checkpoints, loss history, and plots.
 
-## What is implemented
+## Project structure
 
-| Component | Implementation | What to look for |
-| --- | --- | --- |
-| Basic tokenizer | [`Basics/tokenizer.py`](Basics/tokenizer.py) | Vocabulary construction, token-to-ID mapping, and decoding |
-| GPT-2 tokenization | [`Basics/bytePair_enoding.py`](Basics/bytePair_enoding.py) | Encoding and decoding with `tiktoken` |
-| Training pairs | [`Basics/input_output_pairs.py`](Basics/input_output_pairs.py) | Overlapping context windows, one-token-shifted targets, and PyTorch data loading |
-| Token embeddings | [`Basics/embeding.py`](Basics/embeding.py) | Mapping token IDs to learned 256-dimensional vectors |
-| Example corpus | [`archive/the-verdict.txt`](archive/the-verdict.txt) | Text used by the foundation examples |
+| Directory | Contents |
+| --- | --- |
+| [`learning/Basics/`](learning/Basics/) | Tokenization, input/target pairs, embeddings, and attention exercises |
+| [`LLM_CODE/codes/`](LLM_CODE/codes/) | The current model, streaming data loader, and training script |
+| [`LLM_CODE/data/`](LLM_CODE/data/) | Pilot acquisition, standardization, cleaning, and text preparation scripts |
+| [`LLM_CODE/actual_data/`](LLM_CODE/actual_data/) | Larger-corpus acquisition and preparation code, manifests, and documentation |
 
-The simple tokenizer is implemented directly. The GPT-2 example uses the existing BPE tokenizer supplied by `tiktoken`; training a BPE tokenizer is a future extension.
+Dataset contents, model weights, checkpoints, and generated training outputs stay
+local and are excluded from Git. Source manifests and raw-directory placeholders
+remain in the repository.
 
-## The learning path
+## Current model and training path
 
-```text
-Text → Token IDs → Context / Target Pairs → Token Embeddings
-                                             ↓
-                          Causal Attention → Transformer → Next-Token Training
-```
+Text → GPT-2 token IDs → input/target windows → token + positional embeddings →
+causal Transformer blocks → vocabulary scores → next-token loss.
 
-The first four components are present. The attention and model-training stages are planned.
+The main files are:
 
-A next-token training pair shifts the target by one position:
+- [`Dateset_Dataloader.py`](LLM_CODE/codes/Dateset_Dataloader.py): reads indexed
+  documents progressively, adds end-of-text separators, packs token windows,
+  and shuffles a bounded buffer.
+- [`Multi_head_attention.py`](LLM_CODE/codes/Multi_head_attention.py): causal
+  multi-head self-attention.
+- [`transformer_block.py`](LLM_CODE/codes/transformer_block.py): pre-normalization,
+  attention, feed-forward layers, dropout, and residual connections.
+- [`model.py`](LLM_CODE/codes/model.py): 12 Transformer blocks, final normalization,
+  and a vocabulary output layer.
+- [`train.py`](LLM_CODE/codes/train.py): token and learned positional embeddings,
+  cross-entropy training, and pilot-run tracking.
 
-```text
-Input:   [t0, t1, t2]
-Target:  [t1, t2, t3]
-```
+The current configuration uses width 768, 12 heads, context length 256, and batch
+size 2. Input embeddings and the output layer have separate weights, bringing the
+complete model to **162,447,360 parameters**. The original 125M-scale target is a
+size reference; this configuration includes both separate vocabulary matrices.
 
-With batch size `B`, context length `T`, and embedding dimension `D`, token IDs have shape `[B, T]` and embeddings have shape `[B, T, D]`. The embedding demonstration uses `D = 256`.
+## Setup
 
-## Getting started
-
-Use Python 3.10+ and a virtual environment:
+Use Python 3.10 or later. The training script has been checked with PyTorch 2.10.
+Install a PyTorch build compatible with your hardware, then install the project
+dependencies:
 
 ```bash
 git clone https://github.com/Vansh-A1/LLM_FROM_SCRATCH.git
@@ -49,46 +60,66 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-On Windows, activate with `.venv\Scripts\activate`.
+On Windows, activate the environment with `.venv\Scripts\activate`.
 
-Run the examples from the repository root, in this order:
+## Prepare local data before training
+
+The small test pilot is separate from the larger `actual_data` corpus. The
+trainer expects these files under `LLM_CODE/data/training_text/pilot_v1/`:
+
+- `train.txt` and `train_document_index.jsonl`.
+- `validation.txt` and `validation_document_index.jsonl`.
+
+The pilot contains 367 training documents and 43 held-out validation documents.
+The files are not included in Git. See [`data/README.md`](LLM_CODE/data/README.md),
+[`data/SOURCES.md`](LLM_CODE/data/SOURCES.md), and the acquisition/preparation
+scripts for their provenance and workflow. Raw data should remain unchanged.
+The larger corpus has separate instructions in
+[`actual_data/README.md`](LLM_CODE/actual_data/README.md).
+
+## Run the short pilot
+
+After preparing the local data:
 
 ```bash
-python Basics/tokenizer.py
-python Basics/bytePair_enoding.py
-python Basics/input_output_pairs.py
-python Basics/embeding.py
+python LLM_CODE/codes/train.py
 ```
 
-The BPE example prompts for text. The dataset example prints input/target token tensors; the embedding example prints their shapes. `tiktoken` may download its encoding data on first use.
+Settings are near the top of `train.py`:
 
-The basic tokenizer intentionally uses a small corpus-derived vocabulary. Unseen words raise a `KeyError`, and punctuation is discarded by its regular expression. These make useful next exercises in unknown-token handling and reversible tokenization.
+- Fixed seed: 42.
+- Maximum training updates: 200, or the configured epochs if they finish sooner.
+- Checkpoint interval: 50 updates.
+- Learning-rate warmup: 20 updates; set `warmup_steps` to 0 to disable it.
+- Optional BF16 mixed precision on supported CUDA GPUs; otherwise normal precision.
+- Validation after each epoch or the shortened pilot segment, using the first
+  10 validation batches. This is a sample metric, not a full validation-set score.
 
-## Development roadmap
+Outputs are written under `LLM_CODE/codes/pilot_run/`:
 
-- [x] Build and inspect a simple vocabulary-based tokenizer.
-- [x] Explore GPT-2 BPE encoding and decoding.
-- [x] Construct sliding-window next-token training pairs.
-- [x] Map tokens into embedding vectors.
-- [ ] Add positional embeddings and explain tensor shapes.
-- [ ] Implement self-attention, causal masking, and multi-head attention.
-- [ ] Assemble a GPT-style Transformer block and model.
-- [ ] Add a reproducible training loop, validation split, and checkpointing.
-- [ ] Generate text with temperature, top-k, and top-p sampling.
-- [ ] Publish learning curves, sample outputs, and evaluation notes.
+- `checkpoint.pt`: model, embeddings, optimizer, random states, and progress.
+- `loss_history.csv`: training losses, sampled validation losses, and learning rates.
+- `loss_plot.png`: the recorded training and validation curves.
 
-These are development milestones, with each completed stage intended to include an explanation and a runnable example.
+To continue an interrupted run, set `resume_training = True`. Keep the data and
+training settings the same. Increase `max_steps` if the saved run reached the
+limit, or `epochs` if it completed all configured epochs. A fresh run refuses to
+overwrite an existing checkpoint; choose a new output directory for a separate
+experiment. Resuming within an epoch re-reads and skips completed batches.
 
-## How to study the code
+The small pilot is for checking the training workflow. It is not enough to
+establish a fully pretrained model's capabilities. Historical learning examples
+also contain local file paths; check those paths before running them elsewhere.
 
-1. Change the input text and inspect how the token IDs change.
-2. Vary context length and stride; compare overlapping training examples.
-3. Inspect the embedding shapes before adding attention.
-4. Record the expected behavior, observed output, and open questions for each experiment.
+## Next work
+
+- Run and inspect the full-size pilot's loss curves and memory use.
+- Add text generation and inspect generated samples.
+- Document larger-corpus experiments and evaluation results.
 
 ## Contributing
 
-Explanations, small reproducible examples, and focused fixes are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the format.
+Focused fixes and clear explanations are welcome. See
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 Built and maintained by [Vansh Joshi](https://github.com/Vansh-A1).
-

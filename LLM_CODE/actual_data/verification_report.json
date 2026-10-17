@@ -1,0 +1,39 @@
+{
+  "independent_source_spot_checks": 106,
+  "source_shards_covered": [
+    "sample/10BT/000_00000.parquet",
+    "sample/10BT/001_00000.parquet",
+    "sample/10BT/002_00000.parquet",
+    "sample/10BT/003_00000.parquet",
+    "sample/10BT/004_00000.parquet"
+  ],
+  "source_text_after_cleaning_matches_export": "PASS",
+  "source_id_url_and_reported_token_metadata_matches": "PASS",
+  "source_check_method": "Sampled every 40,000th training and 1,000th validation index record, plus final records; located original Parquet row groups and compared IDs, URLs, upstream token counts, cleaned bytes and SHA-256.",
+  "source_check_observation": "The independent comparison completed successfully before the separate preservation audit reported the code-file edit below.",
+  "protected_files_verified_unchanged": 123,
+  "preexisting_dataset_files_verified_unchanged": 121,
+  "existing_file_changes_observed_during_run": [
+    {
+      "path": "LLM_CODE/codes/data_pipeline.py",
+      "baseline_sha256": "37b36603f5c050b4aeb362d6fb87cd44394a69b4b75117fa190d02140f19252b",
+      "current_sha256": null,
+      "current_mtime_utc": null
+    }
+  ],
+  "preservation_note": "Preparation scripts write only inside actual_data. The independently changed code file was left untouched; no restoration or overwrite was attempted.",
+  "token_id_or_model_weight_files_created": false,
+  "full_verification_results": "See manifest.json; ready only after every exported document has been verified.",
+  "full_verification_status": "ready",
+  "full_verification": {
+    "output_checksums": "PASS",
+    "all_documents_utf8_and_nonempty": "PASS",
+    "all_document_offsets_and_fingerprints": "PASS",
+    "global_content_and_url_deduplication": "PASS",
+    "train_validation_host_separation": "PASS",
+    "cleaning_idempotence": "PASS",
+    "source_reported_training_size_target": "PASS",
+    "tokenization_performed": false
+  },
+  "large_corpus_files_verified_ignored_by_git": true
+}

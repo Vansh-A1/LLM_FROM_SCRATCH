@@ -1,0 +1,49 @@
+{
+  "source": "code",
+  "cleaning_version": "code_v1",
+  "input_file": "standardized/code/documents.jsonl",
+  "input_sha256_before": "9ee68463536a5cb58308a2c38d37f4db741a717f3c0f48033b01d83d5ef55b7d",
+  "input_sha256_after": "9ee68463536a5cb58308a2c38d37f4db741a717f3c0f48033b01d83d5ef55b7d",
+  "standardized_input_unchanged": true,
+  "input_documents": 100,
+  "output_documents": 100,
+  "failures": 0,
+  "original_characters": 404519,
+  "cleaned_characters": 404519,
+  "characters_removed": 0,
+  "percentage_removed": 0.0,
+  "min_characters": 72,
+  "max_characters": 90660,
+  "mean_characters": 4045.19,
+  "documents_with_zero_reduction": 100,
+  "documents_over_25_percent_reduction": 0,
+  "documents_over_50_percent_reduction": 0,
+  "documents_over_75_percent_reduction": 0,
+  "source_counters": {
+    "control_characters_removed": 0
+  },
+  "highest_reductions": [
+    {
+      "id": "code:057221694126e9258cfa78a65df2c3cc1242a2d6",
+      "original_characters": 2625,
+      "cleaned_characters": 2625,
+      "characters_removed": 0,
+      "percentage_removed": 0.0
+    },
+    {
+      "id": "code:08242c9905e5aa75275e91bcf4362f9d2dce2857",
+      "original_characters": 2625,
+      "cleaned_characters": 2625,
+      "characters_removed": 0,
+      "percentage_removed": 0.0
+    },
+    {
+      "id": "code:0a9db4838a49b7bf7d7d0139fb8cf566d8da4952",
+      "original_characters": 2345,
+      "cleaned_characters": 2345,
+      "characters_removed": 0,
+      "percentage_removed": 0.0
+    }
+  ],
+  "output_sha256": "e8915deb1c643b08d222e82a722a6932e6e066d8e9cca88db471d5cd17a04e9d"
+}

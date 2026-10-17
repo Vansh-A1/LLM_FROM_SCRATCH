@@ -1,0 +1,27 @@
+{
+  "name": "pilot_v1",
+  "description": "Small multi-source corpus used to test the data pipeline before downloading the full pretraining corpus.",
+  "sources": {
+    "fineweb": {
+      "target_documents": 5000
+    },
+    "wikipedia": {
+      "target_documents": 2000
+    },
+    "code": {
+      "target_documents": 2000
+    },
+    "stackexchange": {
+      "target_documents": 1000
+    },
+    "gutenberg": {
+      "target_books": 20
+    },
+    "arxiv": {
+      "target_papers": 100
+    },
+    "scanned_docs": {
+      "target_pages": 200
+    }
+  }
+}

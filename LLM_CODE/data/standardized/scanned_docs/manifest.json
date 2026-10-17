@@ -1,0 +1,19 @@
+{
+  "source": "scanned_docs",
+  "input_documents": 2,
+  "output_documents": 2,
+  "failed_documents": 0,
+  "total_characters": 21320,
+  "min_characters": 7433,
+  "max_characters": 13887,
+  "mean_characters": 10660.0,
+  "raw_files": [
+    "raw/scanned_docs/scan_001.pdf",
+    "raw/scanned_docs/scan_002.pdf"
+  ],
+  "extraction_methods": [
+    "existing_pdf_ocr_text_layer"
+  ],
+  "timestamp": "2026-10-02T11:32:34.788854+00:00",
+  "status": "COMPLETE"
+}

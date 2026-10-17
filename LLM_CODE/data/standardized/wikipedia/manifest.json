@@ -1,0 +1,22 @@
+{
+  "source": "wikipedia",
+  "input_documents": 100,
+  "output_documents": 100,
+  "failed_documents": 0,
+  "total_characters": 787994,
+  "min_characters": 160,
+  "max_characters": 50324,
+  "mean_characters": 7879.94,
+  "raw_files": [
+    "raw/wikipedia/articles_000.json",
+    "raw/wikipedia/articles_001.json",
+    "raw/wikipedia/articles_002.json",
+    "raw/wikipedia/articles_003.json",
+    "raw/wikipedia/articles_004.json"
+  ],
+  "extraction_methods": [
+    "mediawiki_revision_content"
+  ],
+  "timestamp": "2026-10-02T11:32:29.853888+00:00",
+  "status": "COMPLETE"
+}

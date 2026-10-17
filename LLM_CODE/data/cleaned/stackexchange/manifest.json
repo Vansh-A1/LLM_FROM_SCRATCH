@@ -1,0 +1,49 @@
+{
+  "source": "stackexchange",
+  "cleaning_version": "stackexchange_v1",
+  "input_file": "standardized/stackexchange/documents.jsonl",
+  "input_sha256_before": "f759782237438862e255f8d99597a2cd28e0c649879635bd83cafcfc7bfcb3bb",
+  "input_sha256_after": "f759782237438862e255f8d99597a2cd28e0c649879635bd83cafcfc7bfcb3bb",
+  "standardized_input_unchanged": true,
+  "input_documents": 100,
+  "output_documents": 100,
+  "failures": 0,
+  "original_characters": 283001,
+  "cleaned_characters": 282758,
+  "characters_removed": 243,
+  "percentage_removed": 0.08586542097024392,
+  "min_characters": 307,
+  "max_characters": 14732,
+  "mean_characters": 2827.58,
+  "documents_with_zero_reduction": 0,
+  "documents_over_25_percent_reduction": 0,
+  "documents_over_50_percent_reduction": 0,
+  "documents_over_75_percent_reduction": 0,
+  "source_counters": {
+    "control_characters_removed": 0
+  },
+  "highest_reductions": [
+    {
+      "id": "stackexchange:192",
+      "original_characters": 1442,
+      "cleaned_characters": 1436,
+      "characters_removed": 6,
+      "percentage_removed": 0.4160887656033287
+    },
+    {
+      "id": "stackexchange:359",
+      "original_characters": 595,
+      "cleaned_characters": 593,
+      "characters_removed": 2,
+      "percentage_removed": 0.33613445378151263
+    },
+    {
+      "id": "stackexchange:474",
+      "original_characters": 308,
+      "cleaned_characters": 307,
+      "characters_removed": 1,
+      "percentage_removed": 0.3246753246753247
+    }
+  ],
+  "output_sha256": "47bbcdc50b1a2a04d034bc80130f3221384a8e57f5110a328776e0c2b0ebd1de"
+}

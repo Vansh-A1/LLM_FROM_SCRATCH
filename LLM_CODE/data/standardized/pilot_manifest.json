@@ -1,0 +1,370 @@
+{
+  "timestamp": "2026-10-02T11:32:34.946443+00:00",
+  "status": "COMPLETE",
+  "schema_fields": [
+    "id",
+    "source",
+    "text",
+    "metadata"
+  ],
+  "sources": {
+    "wikipedia": {
+      "source": "wikipedia",
+      "input_documents": 100,
+      "output_documents": 100,
+      "failed_documents": 0,
+      "total_characters": 787994,
+      "min_characters": 160,
+      "max_characters": 50324,
+      "mean_characters": 7879.94,
+      "raw_files": [
+        "raw/wikipedia/articles_000.json",
+        "raw/wikipedia/articles_001.json",
+        "raw/wikipedia/articles_002.json",
+        "raw/wikipedia/articles_003.json",
+        "raw/wikipedia/articles_004.json"
+      ],
+      "extraction_methods": [
+        "mediawiki_revision_content"
+      ],
+      "timestamp": "2026-10-02T11:32:29.853888+00:00",
+      "status": "COMPLETE"
+    },
+    "fineweb": {
+      "source": "fineweb",
+      "input_documents": 100,
+      "output_documents": 100,
+      "failed_documents": 0,
+      "total_characters": 369106,
+      "min_characters": 448,
+      "max_characters": 17410,
+      "mean_characters": 3691.06,
+      "raw_files": [
+        "raw/fineweb/fineweb_edu_pilot_100.jsonl"
+      ],
+      "extraction_methods": [
+        "jsonl_text_field"
+      ],
+      "timestamp": "2026-10-02T11:32:34.047897+00:00",
+      "status": "COMPLETE"
+    },
+    "code": {
+      "source": "code",
+      "input_documents": 100,
+      "output_documents": 100,
+      "failed_documents": 0,
+      "total_characters": 404519,
+      "min_characters": 72,
+      "max_characters": 90660,
+      "mean_characters": 4045.19,
+      "raw_files": [
+        "raw/code/stackv2_edu_pilot_100.jsonl"
+      ],
+      "extraction_methods": [
+        "jsonl_code_text"
+      ],
+      "timestamp": "2026-10-02T11:32:34.113846+00:00",
+      "status": "COMPLETE"
+    },
+    "stackexchange": {
+      "source": "stackexchange",
+      "input_documents": 100,
+      "output_documents": 100,
+      "failed_documents": 0,
+      "total_characters": 283001,
+      "min_characters": 308,
+      "max_characters": 14734,
+      "mean_characters": 2830.01,
+      "raw_files": [
+        "raw/stackexchange/stackexchange_pilot_100.jsonl"
+      ],
+      "extraction_methods": [
+        "jsonl_text_field"
+      ],
+      "timestamp": "2026-10-02T11:32:34.179888+00:00",
+      "status": "COMPLETE"
+    },
+    "gutenberg": {
+      "source": "gutenberg",
+      "input_documents": 3,
+      "output_documents": 3,
+      "failed_documents": 0,
+      "total_characters": 1768905,
+      "min_characters": 450982,
+      "max_characters": 728846,
+      "mean_characters": 589635.0,
+      "raw_files": [
+        "raw/gutenberg/frankenstein/frankenstein.html",
+        "raw/gutenberg/pride_and_prejudice/pride_and_prejudice.txt",
+        "raw/gutenberg/sherlock_holmes/sherlock_holmes.epub"
+      ],
+      "extraction_methods": [
+        "epub_spine_text",
+        "html_visible_text",
+        "plain_text_utf8"
+      ],
+      "timestamp": "2026-10-02T11:32:34.237041+00:00",
+      "status": "COMPLETE"
+    },
+    "arxiv": {
+      "source": "arxiv",
+      "input_documents": 5,
+      "output_documents": 5,
+      "failed_documents": 0,
+      "total_characters": 279267,
+      "min_characters": 35965,
+      "max_characters": 74372,
+      "mean_characters": 55853.4,
+      "raw_files": [
+        "raw/arxiv/paper_001.pdf",
+        "raw/arxiv/paper_002.pdf",
+        "raw/arxiv/paper_003.pdf",
+        "raw/arxiv/paper_004.pdf",
+        "raw/arxiv/paper_005.pdf"
+      ],
+      "extraction_methods": [
+        "pdf_embedded_text"
+      ],
+      "timestamp": "2026-10-02T11:32:34.344626+00:00",
+      "status": "COMPLETE"
+    },
+    "scanned_docs": {
+      "source": "scanned_docs",
+      "input_documents": 2,
+      "output_documents": 2,
+      "failed_documents": 0,
+      "total_characters": 21320,
+      "min_characters": 7433,
+      "max_characters": 13887,
+      "mean_characters": 10660.0,
+      "raw_files": [
+        "raw/scanned_docs/scan_001.pdf",
+        "raw/scanned_docs/scan_002.pdf"
+      ],
+      "extraction_methods": [
+        "existing_pdf_ocr_text_layer"
+      ],
+      "timestamp": "2026-10-02T11:32:34.788854+00:00",
+      "status": "COMPLETE"
+    }
+  },
+  "input_documents": 410,
+  "output_documents": 410,
+  "failed_documents": 0,
+  "error_records": 0,
+  "unique_ids": 410,
+  "total_characters": 3914112,
+  "input_count_discrepancies": [],
+  "validation": {
+    "all_jsonl_valid": true,
+    "all_document_schemas_valid": true,
+    "manifest_statistics_match": true,
+    "traceability_valid": true,
+    "ids_unique": true,
+    "wikipedia_regression": true,
+    "validation_errors": [],
+    "output_documents": 410,
+    "total_characters": 3914112,
+    "sources": {
+      "wikipedia": {
+        "output_documents": 100,
+        "total_characters": 787994,
+        "min_characters": 160,
+        "max_characters": 50324,
+        "mean_characters": 7879.94
+      },
+      "fineweb": {
+        "output_documents": 100,
+        "total_characters": 369106,
+        "min_characters": 448,
+        "max_characters": 17410,
+        "mean_characters": 3691.06
+      },
+      "code": {
+        "output_documents": 100,
+        "total_characters": 404519,
+        "min_characters": 72,
+        "max_characters": 90660,
+        "mean_characters": 4045.19
+      },
+      "stackexchange": {
+        "output_documents": 100,
+        "total_characters": 283001,
+        "min_characters": 308,
+        "max_characters": 14734,
+        "mean_characters": 2830.01
+      },
+      "gutenberg": {
+        "output_documents": 3,
+        "total_characters": 1768905,
+        "min_characters": 450982,
+        "max_characters": 728846,
+        "mean_characters": 589635.0
+      },
+      "arxiv": {
+        "output_documents": 5,
+        "total_characters": 279267,
+        "min_characters": 35965,
+        "max_characters": 74372,
+        "mean_characters": 55853.4
+      },
+      "scanned_docs": {
+        "output_documents": 2,
+        "total_characters": 21320,
+        "min_characters": 7433,
+        "max_characters": 13887,
+        "mean_characters": 10660.0
+      }
+    },
+    "unique_ids": 410
+  },
+  "raw_checksum_verification": {
+    "passed": true,
+    "input_file_set_unchanged": true,
+    "files": [
+      {
+        "file": "raw/arxiv/paper_001.pdf",
+        "sha256_before": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+        "sha256_after": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+        "unchanged": true
+      },
+      {
+        "file": "raw/arxiv/paper_002.pdf",
+        "sha256_before": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+        "sha256_after": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+        "unchanged": true
+      },
+      {
+        "file": "raw/arxiv/paper_003.pdf",
+        "sha256_before": "f9f3a16da44702bb812d8db28ef5cb53bd4904fc6815a9be9ea80b653e341ac7",
+        "sha256_after": "f9f3a16da44702bb812d8db28ef5cb53bd4904fc6815a9be9ea80b653e341ac7",
+        "unchanged": true
+      },
+      {
+        "file": "raw/arxiv/paper_004.pdf",
+        "sha256_before": "e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4",
+        "sha256_after": "e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4",
+        "unchanged": true
+      },
+      {
+        "file": "raw/arxiv/paper_005.pdf",
+        "sha256_before": "7a660a5500517b69036bc477dc10a5cea03a3d1be01b9627260676e4cbd0f4d8",
+        "sha256_after": "7a660a5500517b69036bc477dc10a5cea03a3d1be01b9627260676e4cbd0f4d8",
+        "unchanged": true
+      },
+      {
+        "file": "raw/code/stackv2_edu_pilot_100.jsonl",
+        "sha256_before": "c75908e91b4a3aded884d1ad9fdb5d369bac757ad58cf48c2d846624962702d7",
+        "sha256_after": "c75908e91b4a3aded884d1ad9fdb5d369bac757ad58cf48c2d846624962702d7",
+        "unchanged": true
+      },
+      {
+        "file": "raw/fineweb/fineweb_edu_pilot_100.jsonl",
+        "sha256_before": "bc779995743069f754c473a916e0d3b3d36d828e06dce787f1f411c4d641fe12",
+        "sha256_after": "bc779995743069f754c473a916e0d3b3d36d828e06dce787f1f411c4d641fe12",
+        "unchanged": true
+      },
+      {
+        "file": "raw/gutenberg/frankenstein/frankenstein.html",
+        "sha256_before": "23403a6a3b1cace42a06d6c378a6f1acf8ec97c940c652d12fe3c0d30275e58f",
+        "sha256_after": "23403a6a3b1cace42a06d6c378a6f1acf8ec97c940c652d12fe3c0d30275e58f",
+        "unchanged": true
+      },
+      {
+        "file": "raw/gutenberg/pride_and_prejudice/pride_and_prejudice.txt",
+        "sha256_before": "81300b79e8a8d65ac530a97578417d06137e3bbc90622a10a65e5036183d2500",
+        "sha256_after": "81300b79e8a8d65ac530a97578417d06137e3bbc90622a10a65e5036183d2500",
+        "unchanged": true
+      },
+      {
+        "file": "raw/gutenberg/sherlock_holmes/sherlock_holmes.epub",
+        "sha256_before": "dad985e2300b30e6a5459444fb78ee1675c766411b62bdb3d6a21314cc927331",
+        "sha256_after": "dad985e2300b30e6a5459444fb78ee1675c766411b62bdb3d6a21314cc927331",
+        "unchanged": true
+      },
+      {
+        "file": "raw/scanned_docs/scan_001.pdf",
+        "sha256_before": "d4c31f3126a94cb990b70a561eaa2a4e3d87aafb55d01283c90b773016724c19",
+        "sha256_after": "d4c31f3126a94cb990b70a561eaa2a4e3d87aafb55d01283c90b773016724c19",
+        "unchanged": true
+      },
+      {
+        "file": "raw/scanned_docs/scan_002.pdf",
+        "sha256_before": "971182ef26af4c08abc983f532b231579f3f10ffb7a8986447053f68c95903ad",
+        "sha256_after": "971182ef26af4c08abc983f532b231579f3f10ffb7a8986447053f68c95903ad",
+        "unchanged": true
+      },
+      {
+        "file": "raw/stackexchange/stackexchange_pilot_100.jsonl",
+        "sha256_before": "3b29c418ec9f9e488b8c6f5b9ad09f9a717ef69145922c8e40b8d932358b6884",
+        "sha256_after": "3b29c418ec9f9e488b8c6f5b9ad09f9a717ef69145922c8e40b8d932358b6884",
+        "unchanged": true
+      },
+      {
+        "file": "raw/wikipedia/articles_000.json",
+        "sha256_before": "cde8c49ad5768b59bb4f724c5b210f1e7c096b195277409b65a4c1d1648e5756",
+        "sha256_after": "cde8c49ad5768b59bb4f724c5b210f1e7c096b195277409b65a4c1d1648e5756",
+        "unchanged": true
+      },
+      {
+        "file": "raw/wikipedia/articles_001.json",
+        "sha256_before": "0816d55d2511dd1be68a64dab7e497612b189f97ae6b9d75ee4fb3f25fc021ef",
+        "sha256_after": "0816d55d2511dd1be68a64dab7e497612b189f97ae6b9d75ee4fb3f25fc021ef",
+        "unchanged": true
+      },
+      {
+        "file": "raw/wikipedia/articles_002.json",
+        "sha256_before": "45f1edb41a30a86302e0e4c85960c3ce31cb7c5bd566102b4b5b16b71caa188b",
+        "sha256_after": "45f1edb41a30a86302e0e4c85960c3ce31cb7c5bd566102b4b5b16b71caa188b",
+        "unchanged": true
+      },
+      {
+        "file": "raw/wikipedia/articles_003.json",
+        "sha256_before": "c98cc89c50b2a4afaa890936a0c2f33281813c7c160fdb5aa0e6621c023ec96a",
+        "sha256_after": "c98cc89c50b2a4afaa890936a0c2f33281813c7c160fdb5aa0e6621c023ec96a",
+        "unchanged": true
+      },
+      {
+        "file": "raw/wikipedia/articles_004.json",
+        "sha256_before": "411b2e6774cceeed45f76d58b2d6526d568926aa7f74c295130c8509d60b8660",
+        "sha256_after": "411b2e6774cceeed45f76d58b2d6526d568926aa7f74c295130c8509d60b8660",
+        "unchanged": true
+      }
+    ]
+  },
+  "protected_files_verification": {
+    "passed": true,
+    "files": [
+      {
+        "file": "standardize_pilot/standardize_wikipedia_one.py",
+        "sha256_before": "1b02599c5edea85b40396cbf3a252b510d242bb1b7a571dbb1ad2f260c7f7726",
+        "sha256_after": "1b02599c5edea85b40396cbf3a252b510d242bb1b7a571dbb1ad2f260c7f7726",
+        "unchanged": true
+      },
+      {
+        "file": "standardized/wikipedia/sample_001.json",
+        "sha256_before": "3738a19cbe921558505a93cdd6cd1f5677b00baec0907f529c85f23ba65fc1fb",
+        "sha256_after": "3738a19cbe921558505a93cdd6cd1f5677b00baec0907f529c85f23ba65fc1fb",
+        "unchanged": true
+      }
+    ]
+  },
+  "acquisition_metadata_verification": {
+    "passed": true,
+    "files": [
+      {
+        "file": "metadata/arxiv/pilot_files.json",
+        "sha256_before": "65a2b98902e27427d4d6e219b246a001b62922a60b22ae80785ef7cc01819ae0",
+        "sha256_after": "65a2b98902e27427d4d6e219b246a001b62922a60b22ae80785ef7cc01819ae0",
+        "unchanged": true
+      },
+      {
+        "file": "metadata/scanned_docs/pilot_files.json",
+        "sha256_before": "914b528c8d667b9f4fdbf3ec4057220ec6f7766c92c9106d5583bf054bb7c22e",
+        "sha256_after": "914b528c8d667b9f4fdbf3ec4057220ec6f7766c92c9106d5583bf054bb7c22e",
+        "unchanged": true
+      }
+    ]
+  },
+  "ocr_executed": false
+}

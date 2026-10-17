@@ -1,0 +1,160 @@
+[
+  {
+    "local_file": "paper_001.pdf",
+    "arxiv_id": "1706.03762",
+    "version": "v7",
+    "title": "Attention Is All You Need",
+    "category": "AI / ML",
+    "arxiv_categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "source_url": "https://arxiv.org/pdf/1706.03762v7",
+    "source_page_url": "https://arxiv.org/abs/1706.03762v7",
+    "type": "digital_pdf",
+    "bytes": 2215244,
+    "pages": 15,
+    "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+    "embedded_text": true,
+    "verification": {
+      "result": "PASS",
+      "pdf_header": true,
+      "opens_successfully": true,
+      "sample_pages": [
+        1,
+        2,
+        3
+      ],
+      "embedded_text_characters": 8947,
+      "meaningful_words": 1078,
+      "title_confirmed": true
+    }
+  },
+  {
+    "local_file": "paper_002.pdf",
+    "arxiv_id": "2010.11929",
+    "version": "v2",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "category": "Computer Vision",
+    "arxiv_categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "source_url": "https://arxiv.org/pdf/2010.11929v2",
+    "source_page_url": "https://arxiv.org/abs/2010.11929v2",
+    "type": "digital_pdf",
+    "bytes": 3743814,
+    "pages": 22,
+    "sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+    "embedded_text": true,
+    "verification": {
+      "result": "PASS",
+      "pdf_header": true,
+      "opens_successfully": true,
+      "sample_pages": [
+        1,
+        2,
+        3
+      ],
+      "embedded_text_characters": 11000,
+      "meaningful_words": 1232,
+      "title_confirmed": true
+    }
+  },
+  {
+    "local_file": "paper_003.pdf",
+    "arxiv_id": "1603.04246",
+    "version": "v2",
+    "title": "The sphere packing problem in dimension 8",
+    "category": "Mathematics",
+    "arxiv_categories": [
+      "math.NT",
+      "math.MG"
+    ],
+    "source_url": "https://arxiv.org/pdf/1603.04246v2",
+    "source_page_url": "https://arxiv.org/abs/1603.04246v2",
+    "type": "digital_pdf",
+    "bytes": 835011,
+    "pages": 24,
+    "sha256": "f9f3a16da44702bb812d8db28ef5cb53bd4904fc6815a9be9ea80b653e341ac7",
+    "embedded_text": true,
+    "verification": {
+      "result": "PASS",
+      "pdf_header": true,
+      "opens_successfully": true,
+      "sample_pages": [
+        1,
+        2,
+        3
+      ],
+      "embedded_text_characters": 6578,
+      "meaningful_words": 749,
+      "title_confirmed": true
+    }
+  },
+  {
+    "local_file": "paper_004.pdf",
+    "arxiv_id": "1602.03837",
+    "version": "v1",
+    "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+    "category": "Physics",
+    "arxiv_categories": [
+      "gr-qc",
+      "astro-ph.HE"
+    ],
+    "source_url": "https://arxiv.org/pdf/1602.03837v1",
+    "source_page_url": "https://arxiv.org/abs/1602.03837v1",
+    "type": "digital_pdf",
+    "bytes": 935476,
+    "pages": 16,
+    "sha256": "e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4",
+    "embedded_text": true,
+    "verification": {
+      "result": "PASS",
+      "pdf_header": true,
+      "opens_successfully": true,
+      "sample_pages": [
+        1,
+        2,
+        3
+      ],
+      "embedded_text_characters": 12462,
+      "meaningful_words": 1435,
+      "title_confirmed": true
+    }
+  },
+  {
+    "local_file": "paper_005.pdf",
+    "arxiv_id": "2301.09573",
+    "version": "v2",
+    "title": "Huber-Robust Confidence Sequences",
+    "category": "Statistics",
+    "arxiv_categories": [
+      "math.ST",
+      "cs.LG",
+      "stat.ME",
+      "stat.ML"
+    ],
+    "source_url": "https://arxiv.org/pdf/2301.09573v2",
+    "source_page_url": "https://arxiv.org/abs/2301.09573v2",
+    "type": "digital_pdf",
+    "bytes": 670766,
+    "pages": 27,
+    "sha256": "7a660a5500517b69036bc477dc10a5cea03a3d1be01b9627260676e4cbd0f4d8",
+    "embedded_text": true,
+    "verification": {
+      "result": "PASS",
+      "pdf_header": true,
+      "opens_successfully": true,
+      "sample_pages": [
+        1,
+        2,
+        3
+      ],
+      "embedded_text_characters": 10553,
+      "meaningful_words": 1266,
+      "title_confirmed": true
+    }
+  }
+]
