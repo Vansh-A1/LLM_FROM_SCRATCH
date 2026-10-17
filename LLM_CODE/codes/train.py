@@ -20,7 +20,7 @@ num_heads = 12
 d_head = d_out // num_heads
 
 vocab_size = 50257
-batch_size = 2
+batch_size = 32
 
 epochs = 50
 learning_rate = 3e-4

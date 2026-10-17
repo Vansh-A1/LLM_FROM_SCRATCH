@@ -42,7 +42,7 @@ The main files are:
   cross-entropy training, and pilot-run tracking.
 
 The current configuration uses width 768, 12 heads, context length 256, and batch
-size 2. Input embeddings and the output layer have separate weights, bringing the
+size 32. Input embeddings and the output layer have separate weights, bringing the
 complete model to **162,447,360 parameters**. The original 125M-scale target is a
 size reference; this configuration includes both separate vocabulary matrices.
 
