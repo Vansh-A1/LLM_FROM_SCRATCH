@@ -1,9 +1,0 @@
-# Downloaded and prepared corpus files stay local.
-/raw/
-/work/
-*.txt
-*.jsonl
-*.partial
-*.log
-__pycache__/
-!source_docs/
