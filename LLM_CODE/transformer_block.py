@@ -66,4 +66,20 @@ class Transformer_block(nn.Module):
         x = forwardx + shortcut
 
         return x
+        
+if __name__ == "__main__":
+
+    model = Transformer_block(
+        d_in=768,
+        d_out=768,
+        d_head=64,
+        context_length=1024
+    )
+
+    x = torch.randn(2, 16, 768)
+
+    output = model(x)
+
+    print("Input shape:", x.shape)
+    print("Output shape:", output.shape)
 
