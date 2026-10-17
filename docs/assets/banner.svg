@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title description">
+  <title id="title">LLM From Scratch</title>
+  <desc id="description">Understand the parts. Build the model. A PyTorch language-model learning project.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#152238"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#cbd5e1" stroke-opacity="0.045"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="320" rx="20" fill="url(#background)"/>
+  <rect width="1280" height="320" rx="20" fill="url(#grid)"/>
+  <rect x="48" y="48" width="5" height="224" rx="2.5" fill="#a3e635"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="79" fill="#a3e635" font-size="13" font-weight="700" letter-spacing="3">A PROJECT BY VANSH JOSHI</text>
+    <text x="76" y="148" fill="#f8fafc" font-size="55" font-weight="700" letter-spacing="-2">LLM FROM SCRATCH</text>
+    <text x="80" y="192" fill="#cbd5e1" font-size="24">Understand the parts. Build the model.</text>
+    <rect x="80" y="227" width="94" height="30" rx="6" fill="#243248"/>
+    <text x="127" y="247" text-anchor="middle" fill="#e2e8f0" font-size="13">PyTorch</text>
+    <rect x="186" y="227" width="182" height="30" rx="6" fill="#243248"/>
+    <text x="277" y="247" text-anchor="middle" fill="#e2e8f0" font-size="13">Causal Transformer</text>
+    <rect x="380" y="227" width="154" height="30" rx="6" fill="#243248"/>
+    <text x="457" y="247" text-anchor="middle" fill="#e2e8f0" font-size="13">Learning in public</text>
+    <g transform="translate(900 63)">
+      <path d="M122 37V172" stroke="#64748b" stroke-width="2" stroke-dasharray="4 5"/>
+      <rect x="0" y="0" width="244" height="48" rx="10" fill="#1b2b40" stroke="#3f536d"/>
+      <text x="122" y="30" text-anchor="middle" fill="#e2e8f0" font-size="15">TOKEN EMBEDDINGS</text>
+      <rect x="0" y="69" width="244" height="70" rx="10" fill="#213729" stroke="#73994a"/>
+      <text x="122" y="98" text-anchor="middle" fill="#d9f99d" font-size="15" font-weight="700">TRANSFORMER BLOCKS</text>
+      <text x="122" y="121" text-anchor="middle" fill="#b2c6ab" font-size="12">attention + feed-forward</text>
+      <rect x="0" y="160" width="244" height="48" rx="10" fill="#1b2b40" stroke="#3f536d"/>
+      <text x="122" y="190" text-anchor="middle" fill="#e2e8f0" font-size="15">NEXT-TOKEN PREDICTION</text>
+    </g>
+  </g>
+</svg>

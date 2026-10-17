@@ -1,25 +1,30 @@
 # Contributing
 
-Thank you for helping make these experiments clearer and easier to reproduce.
+Focused fixes and clear explanations are welcome. This is a learning project;
+readability and understanding the math matter more than adding abstractions.
 
-## Useful contributions
+## Where changes belong
 
-- Explain the mathematical idea behind an implementation.
-- Fix a specific issue with a minimal reproducible example.
-- Improve setup instructions or remove environment-specific assumptions.
-- Add a focused experiment with documented inputs and observations.
+- `llm/`: the attention layers, Transformer blocks, and current model.
+- `training/`: the streaming loader, optimizer loop, validation, and run outputs.
+- `learning/`: isolated exercises and explicitly labeled historical drafts.
+- `docs/`: setup, input-format, and training documentation.
 
 ## Before proposing a change
 
-1. Read the README and check which components are implemented versus planned.
-2. Keep each change focused on one concept or problem.
-3. Include the command you ran, environment details, and observed output.
-4. For algorithm changes, explain why the result should change and show the relevant comparison.
-5. Use data you have permission to share; keep credentials and local environment files out of commits.
+1. Keep the change focused on one concept or problem.
+2. Preserve the author's explicit coding style where practical.
+3. For model or training changes, explain the behavior and show a small check.
+4. Report the command, environment, expected behavior, and observed result.
+5. Keep local datasets, acquisition/cleaning tools, checkpoints, and credentials
+   outside the published code tree.
 
-Avoid unsupported benchmark claims. When reporting results, include the dataset or input, metric, configuration, and limitations.
+A quick syntax check is:
 
-## Reporting an issue
+```bash
+python -m compileall -q llm training learning
+```
 
-Include the affected file, expected behavior, actual behavior, and the smallest command or example that reproduces it. Technical questions and suggestions for clearer explanations are welcome.
-
+Run a training check only with your own local corpus and a separate output folder.
+Do not present an early training-loss value as a model-quality benchmark. When
+reporting an evaluation, identify the dataset, metric, run settings, and limits.
