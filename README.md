@@ -1,56 +1,81 @@
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="LLM From Scratch — understand the parts, build the model" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/"><img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white"></a>
+  <a href="https://pytorch.org/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&amp;logo=pytorch&amp;logoColor=white"></a>
+  <img alt="Model size" src="https://img.shields.io/badge/Parameters-163M-0F766E?style=flat-square">
+  <img alt="Project stage" src="https://img.shields.io/badge/Stage-training_experiments-334155?style=flat-square">
+</p>
+
 # LLM From Scratch
 
-**Building a language model one component at a time, with Python and PyTorch.**
+A language-model project built to understand each component: tokenization,
+embeddings, causal attention, Transformer blocks, and next-token training.
+The code stays explicit so the math and the training loop can be followed by hand.
 
-This is my implementation journal for understanding how text becomes tokens,
-how training examples are constructed, and how a Transformer learns to predict
-the next token. The code is kept readable so each part can be studied separately.
+**Start with [`llm/`](llm/) for the model and [`training/`](training/) for the current
+training run.** Earlier exercises live separately in [`learning/`](learning/).
 
-> **Current stage:** a GPT-style model and a short pilot training loop, including
-> held-out validation, gradient clipping, checkpoints, loss history, and plots.
+[Model components](llm/) · [Training guide](docs/training.md) · [Learning exercises](learning/README.md) · [Contributing](CONTRIBUTING.md)
 
-## Project structure
+## Repository map
 
-| Directory | Contents |
+```text
+LLM_FROM_SCRATCH/
+├── llm/                         # Active model components
+│   ├── attention.py             # Causal multi-head self-attention
+│   ├── transformer_block.py     # Attention, feed-forward layers, residuals
+│   └── model.py                 # Transformer stack and vocabulary projection
+├── training/                    # Active input and training code
+│   ├── dataset.py               # Streaming token windows and DataLoader
+│   └── train.py                 # Training, validation, checkpoints, plots
+├── learning/                    # Earlier exercises, grouped by concept
+│   ├── tokenization/
+│   ├── data_loading/
+│   ├── embeddings/
+│   └── attention/
+├── docs/
+│   ├── training.md              # Local inputs, run settings, output files
+│   └── assets/banner.svg
+├── CONTRIBUTING.md
+└── requirements.txt
+```
+
+Dataset files, downloaded books, acquisition scripts, cleaning utilities, model
+weights, and generated run output are outside the published code tree. The trainer
+accepts an already prepared local corpus; see the [input format](docs/training.md#local-input-files).
+
+## The active model
+
+```mermaid
+flowchart LR
+    A[Token IDs] --> B[Token + position embeddings]
+    B --> C[12 causal Transformer blocks]
+    C --> D[Vocabulary scores]
+    D --> E[Next-token loss]
+```
+
+| Component | Configuration |
 | --- | --- |
-| [`learning/Basics/`](learning/Basics/) | Tokenization, input/target pairs, embeddings, and attention exercises |
-| [`LLM_CODE/codes/`](LLM_CODE/codes/) | The current model, streaming data loader, and training script |
-| [`LLM_CODE/data/`](LLM_CODE/data/) | Pilot acquisition, standardization, cleaning, and text preparation scripts |
-| [`LLM_CODE/actual_data/`](LLM_CODE/actual_data/) | Larger-corpus acquisition and preparation code, manifests, and documentation |
+| Architecture | Decoder-only, pre-normalization Transformer |
+| Transformer blocks | 12 |
+| Hidden width / attention heads | 768 / 12 |
+| Context length | 1,024 tokens |
+| Vocabulary | GPT-2 tokenizer, 50,257 tokens |
+| Position embeddings | Learned |
+| Feed-forward layers | Width 3,072 with GELU |
+| Dropout | 0.1 |
+| Complete model | **163,037,184 parameters** |
 
-Dataset contents, model weights, checkpoints, and generated training outputs stay
-local and are excluded from Git. Source manifests and raw-directory placeholders
-remain in the repository.
+Input token embeddings and the vocabulary output projection use separate weights.
+The embeddings are defined in the training script and trained alongside the model.
 
-## Current model and training path
+## Get started
 
-Text → GPT-2 token IDs → input/target windows → token + positional embeddings →
-causal Transformer blocks → vocabulary scores → next-token loss.
-
-The main files are:
-
-- [`Dateset_Dataloader.py`](LLM_CODE/codes/Dateset_Dataloader.py): reads indexed
-  documents progressively, adds end-of-text separators, packs token windows,
-  and shuffles a bounded buffer.
-- [`Multi_head_attention.py`](LLM_CODE/codes/Multi_head_attention.py): causal
-  multi-head self-attention.
-- [`transformer_block.py`](LLM_CODE/codes/transformer_block.py): pre-normalization,
-  attention, feed-forward layers, dropout, and residual connections.
-- [`model.py`](LLM_CODE/codes/model.py): 12 Transformer blocks, final normalization,
-  and a vocabulary output layer.
-- [`train.py`](LLM_CODE/codes/train.py): token and learned positional embeddings,
-  cross-entropy training, and pilot-run tracking.
-
-The current configuration uses width 768, 12 heads, context length 256, and batch
-size 32. Input embeddings and the output layer have separate weights, bringing the
-complete model to **162,447,360 parameters**. The original 125M-scale target is a
-size reference; this configuration includes both separate vocabulary matrices.
-
-## Setup
-
-Use Python 3.10 or later. The training script has been checked with PyTorch 2.10.
-Install a PyTorch build compatible with your hardware, then install the project
-dependencies:
+Install a PyTorch build appropriate for your hardware, then install the remaining
+requirements in a virtual environment:
 
 ```bash
 git clone https://github.com/Vansh-A1/LLM_FROM_SCRATCH.git
@@ -60,66 +85,50 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-On Windows, activate the environment with `.venv\Scripts\activate`.
+On Windows, use `.venv\Scripts\activate` to activate the environment.
 
-## Prepare local data before training
-
-The small test pilot is separate from the larger `actual_data` corpus. The
-trainer expects these files under `LLM_CODE/data/training_text/pilot_v1/`:
-
-- `train.txt` and `train_document_index.jsonl`.
-- `validation.txt` and `validation_document_index.jsonl`.
-
-The pilot contains 367 training documents and 43 held-out validation documents.
-The files are not included in Git. See [`data/README.md`](LLM_CODE/data/README.md),
-[`data/SOURCES.md`](LLM_CODE/data/SOURCES.md), and the acquisition/preparation
-scripts for their provenance and workflow. Raw data should remain unchanged.
-The larger corpus has separate instructions in
-[`actual_data/README.md`](LLM_CODE/actual_data/README.md).
-
-## Run the short pilot
-
-After preparing the local data:
+Place your prepared corpus outside the repository or in the ignored `data/`
+directory. The corpus directory needs `train.txt`, `train.documents.jsonl`,
+`validation.txt`, and `validation.documents.jsonl`.
 
 ```bash
-python LLM_CODE/codes/train.py
+export LLM_DATA_DIR="/absolute/path/to/prepared/corpus"
+export LLM_OUTPUT_DIR="/absolute/path/to/training/run"
+python -m training.train
 ```
 
-Settings are near the top of `train.py`:
+The [training guide](docs/training.md) documents input offsets, resuming, and the
+complete output layout. Settings remain near the top of `training/train.py`.
 
-- Fixed seed: 42.
-- Maximum training updates: 200, or the configured epochs if they finish sooner.
-- Checkpoint interval: 50 updates.
-- Learning-rate warmup: 20 updates; set `warmup_steps` to 0 to disable it.
-- Optional BF16 mixed precision on supported CUDA GPUs; otherwise normal precision.
-- Validation after each epoch or the shortened pilot segment, using the first
-  10 validation batches. This is a sample metric, not a full validation-set score.
+## Current experiment
 
-Outputs are written under `LLM_CODE/codes/pilot_run/`:
+| Setting | Default |
+| --- | --- |
+| Training subset | 300 million target tokens per epoch, rounded to complete windows |
+| Epochs | 3 |
+| Micro-batch / gradient accumulation | 4 / 4 |
+| Optimizer | AdamW, learning rate 0.0003 |
+| Warmup / gradient clipping | 20 updates / maximum gradient norm 1.0 |
+| Mixed precision | BF16 on supported CUDA GPUs |
+| Validation | Every 10 optimizer updates and at each epoch end |
+| Validation sample | The same first 10 held-out batches, about 40,960 target tokens |
+| Loss graph and CSV | Refreshed after each validation check |
+| Checkpoints | One snapshot per epoch, plus `last.pt` for resuming |
 
-- `checkpoint.pt`: model, embeddings, optimizer, random states, and progress.
-- `loss_history.csv`: training losses, sampled validation losses, and learning rates.
-- `loss_plot.png`: the recorded training and validation curves.
+The token cap is applied **before shuffling**. Each epoch uses the same subset,
+with a different deterministic shuffle. At the default settings, complete windows
+provide **299,999,232 target tokens** and **18,311 optimizer updates per epoch**.
 
-To continue an interrupted run, set `resume_training = True`. Keep the data and
-training settings the same. Increase `max_steps` if the saved run reached the
-limit, or `epochs` if it completed all configured epochs. A fresh run refuses to
-overwrite an existing checkpoint; choose a new output directory for a separate
-experiment. Resuming within an epoch re-reads and skips completed batches.
+The validation curve is a fixed-sample metric. It is useful for tracking the run,
+but it is not a score over the entire held-out corpus. Training results and model
+capabilities will be documented when evaluated; the parameter count alone is not
+a performance claim.
 
-The small pilot is for checking the training workflow. It is not enough to
-establish a fully pretrained model's capabilities. Historical learning examples
-also contain local file paths; check those paths before running them elsewhere.
+## Learn one component at a time
 
-## Next work
-
-- Run and inspect the full-size pilot's loss curves and memory use.
-- Add text generation and inspect generated samples.
-- Document larger-corpus experiments and evaluation results.
-
-## Contributing
-
-Focused fixes and clear explanations are welcome. See
-[CONTRIBUTING.md](CONTRIBUTING.md).
+The [`learning/`](learning/README.md) directory keeps the original progression:
+a regex tokenizer, GPT-2 encoding, input/target windows, token embeddings, and
+single-head attention. Historical drafts are labeled separately and are not
+imported by the active trainer.
 
 Built and maintained by [Vansh Joshi](https://github.com/Vansh-A1).
