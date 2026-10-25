@@ -227,3 +227,54 @@ checkpoint = torch.load(
     weights_only=True
 )
 
+model.load_state_dict(checkpoint["model_state_dict"])
+model.eval()
+
+print("\nSFT training completed!")
+
+
+tokenizer = tiktoken.get_encoding("gpt2")
+
+prompt = (
+    "### User:\nWhat is gradient descent?\n"
+    "### Assistant:\n"
+)
+
+input_ids = tokenizer.encode_ordinary(prompt)
+
+input_tensor = torch.tensor(
+    [input_ids],
+    dtype=torch.long,
+    device=DEVICE
+)
+
+generated_ids = []
+
+with torch.no_grad():
+
+    for _ in range(100):
+
+        context = input_tensor[:, -CONTEXT_LENGTH:]
+
+        logits = model(context)
+
+        next_token = torch.argmax(
+            logits[:, -1, :],
+            dim=-1,
+            keepdim=True
+        )
+
+        token_id = next_token.item()
+
+        if token_id == tokenizer.eot_token:
+            break
+
+        generated_ids.append(token_id)
+
+        input_tensor = torch.cat(
+            [input_tensor, next_token],
+            dim=1
+        )
+
+print("\nUser: What is gradient descent?")
+print("Assistant:", tokenizer.decode(generated_ids))
