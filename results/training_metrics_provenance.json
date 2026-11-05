@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "description": "Portable, complete optimizer-update metrics from the completed GPT-2 Small run with one epoch-equivalent token budget. Training randomly sampled windows; the budget does not imply exact once-through dataset coverage.",
+  "source": {
+    "relative_path": "checkpoints/epoch1_3gpu_recovery_20261102/metrics.jsonl",
+    "sha256": "faafef318b0a37ee48b1d146cc7bb8b2f1b33f1a3b3d28a40a31a58ad07a3dfb",
+    "bytes": 9745002,
+    "event_counts": {
+      "validation": 19,
+      "recovery_checkpoint": 700,
+      "train": 17235
+    }
+  },
+  "coverage": {
+    "first_update": 1,
+    "final_update": 17234,
+    "unique_updates": 17234,
+    "missing_updates": [],
+    "validation_points": 19,
+    "validation_steps": [
+      0,
+      1000,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000,
+      7000,
+      8000,
+      9000,
+      10000,
+      11000,
+      12000,
+      13000,
+      14000,
+      15000,
+      16000,
+      17000,
+      17234
+    ],
+    "duplicate_update_numbers": [
+      5
+    ],
+    "deduplication_rule": "Keep the last train event for each update in source-file order. Update 5 is the only duplicate; loss, learning rate, and token count agree, while timing and some runtime diagnostics differ.",
+    "wall_clock_limit": "Metrics contain no wall-clock timestamps. The update-index plots cannot locate interruptions or quantify downtime; there are no gaps in unique optimizer-update coverage."
+  },
+  "training": {
+    "unique_parameters": 124439808,
+    "world_size": 3,
+    "total_updates": 17234,
+    "tokens_per_update": 524288,
+    "training_token_exposures": 9035579392,
+    "final_update": {
+      "step": 17234,
+      "train_loss": 3.1067519187927246,
+      "lr": 0.0005991358875942747,
+      "tokens_processed": 9035579392,
+      "iteration_seconds": 12.365876540075988,
+      "tokens_per_second": 42397.96494012047
+    },
+    "last_100_updates": {
+      "updates": 100,
+      "train_loss_mean": 3.1128578424453734,
+      "iteration_seconds_sum": 1245.301524795359,
+      "combined_tokens_per_second": 42101.28949180854
+    },
+    "last_1000_updates": {
+      "updates": 1000,
+      "train_loss_mean": 3.116324815273285,
+      "iteration_seconds_sum": 12422.869814516249,
+      "combined_tokens_per_second": 42203.452811472285
+    },
+    "all_updates": {
+      "updates": 17234,
+      "train_loss_mean": 3.4481900802576666,
+      "iteration_seconds_sum": 211841.7544033802,
+      "combined_tokens_per_second": 42652.49510157864
+    },
+    "throughput_definition": "Combined global tokens divided by the sum of measured iteration durations across the deduplicated updates. This excludes evaluation, checkpoint saving, startup and interruptions; it is not end-to-end wall-clock throughput."
+  },
+  "validation": {
+    "protocol": "Sampled training-time held-out validation; points are the reported validation events. Not the separate full-file evaluation protocol.",
+    "final_step": 17234,
+    "final_loss": 3.129866123199463,
+    "final_perplexity": 22.870917452220112,
+    "best_logged": {
+      "event": "validation",
+      "step": 17000,
+      "val_loss": 3.128046989440918
+    }
+  },
+  "learning_rate_schedule": {
+    "peak": 0.0006,
+    "minimum": 6e-05,
+    "warmup_updates": 2000,
+    "decay_horizon_index": 600000,
+    "configured_update_budget": 600000,
+    "completed_updates": 17234,
+    "completed_fraction_of_configured_budget": 0.028723333333333333,
+    "indexing": "Completed update n uses schedule index n-1.",
+    "warmup_formula": "peak * (index + 1) / (warmup_updates + 1), for index < 2000",
+    "cosine_formula": "minimum + 0.5 * (1 + cos(pi * (index - 2000) / (600000 - 2000))) * (peak - minimum), for 2000 <= index <= 600000",
+    "after_horizon": "minimum",
+    "interpretation": "The run completed one epoch-equivalent token budget using randomly sampled windows, early in the configured decay schedule. No causal claim about generation quality follows from this observation."
+  },
+  "plots": {
+    "training_loss": "Individual-update train losses, a trailing 100-update arithmetic mean with no padding, and all 19 sampled validation points. The right panel expands the later-update loss scale.",
+    "learning_rate": "Recorded per-update learning rates on the left. The right panel distinguishes observed training from the unexecuted configured continuation."
+  },
+  "public_files": {
+    "training_metrics.csv": {
+      "sha256": "2e780c33f1eb41593d173e415189393fffe4a50b2ccbf07ea9d1d989d60500a3",
+      "bytes": 1613519
+    },
+    "validation_metrics.csv": {
+      "sha256": "fbe4d2c181faf74f33b04663e789f9bf6016806f27d853c90f7e1b888ad1b611",
+      "bytes": 467
+    }
+  },
+  "exclusions": [
+    "Model weights and optimizer states",
+    "Raw checkpoint paths and machine identifiers",
+    "Per-GPU memory diagnostics",
+    "Runtime logs and checkpoint-save events"
+  ],
+  "publication_format": "Public CSV files use LF newlines; all numeric field strings are unchanged from the exact source-derived CSV export."
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "changes": "Portable CLI input/output paths; removal of machine-specific cache paths; pinned dataset download or explicit verified Arrow imports. Adapter and synthetic tests unchanged. Full-validation runner is a portable new implementation of historical target-window protocol, default batch1 versus historical batches4/8. No expensive evaluation was rerun for publication.",
+  "original_environment": {
+    "torch": "2.10.0",
+    "lm_eval": "0.4.13",
+    "datasets": "4.8.4",
+    "transformers": "5.5.3",
+    "tiktoken": "0.14.0",
+    "numpy": "2.4.2",
+    "huggingface_hub": "1.33.0"
+  },
+  "original_harness_core_sha256": {
+    "evaluator.py": "628120153cf24471ead0789106e5c18b02855a7cc77a9aa5da8069fdeab57ed5",
+    "api/model.py": "b8b1db336e168b53d9ca808fe837d5bf8943d9dca76a14cf747e4f3a22d50545",
+    "api/task.py": "4c25a4f1949488483b833ce4fcf91cfd3e066084a9ea00079c6879ae3ba95657",
+    "api/metrics.py": "f4794761c3f53fc036336e79c65dca355ea26a8d4cb00b27155ea2ab4846dbb2",
+    "models/huggingface.py": "56d215b8f713d7579f9c7b58a9b8771b09c88e0e4fb8d1b6dd9068033b614b80"
+  },
+  "files": [
+    {
+      "published_file": "evaluation/safe_model.py",
+      "original_evaluation_file": "safe_model.py",
+      "original_sha256": "e84c0eb8ca1e41290f3e4bd2874cba22838b0ad2e3db5b04bda4525af003bc51",
+      "published_sha256": "5b0e322de7e9510c56d73fafc947c5dc193505fc61b72fda354b98220d3c0afd",
+      "byte_identical": false
+    },
+    {
+      "published_file": "evaluation/reference_model.py",
+      "original_evaluation_file": "reference_model.py",
+      "original_sha256": "c43f0ecdd174aa3a54b0d0ed335a063cd1c07ba662ac10b63756ac45a5cc7af3",
+      "published_sha256": "24cb32df0b826f438b50e41aac122ae43e3ed2c0e1797b339613e868fa35d2dc",
+      "byte_identical": false
+    },
+    {
+      "published_file": "evaluation/benchmark_code/adapter.py",
+      "original_evaluation_file": "benchmark_code/adapter.py",
+      "original_sha256": "ec0b4aafb60e2e02cf095ba6dfa4e8aa9ab4870d414b0136ed9c48d95fa294c0",
+      "published_sha256": "ec0b4aafb60e2e02cf095ba6dfa4e8aa9ab4870d414b0136ed9c48d95fa294c0",
+      "byte_identical": true
+    },
+    {
+      "published_file": "evaluation/benchmark_code/run.py",
+      "original_evaluation_file": "benchmark_code/run.py",
+      "original_sha256": "0ecc3926007122545c68c6b659953afec470d27d5a29f4c6376223b7b03a6904",
+      "published_sha256": "762d5b7b1a1113be386e62f349a114eeae67e63a6544e5f3019a7fe4e655935e",
+      "byte_identical": false
+    },
+    {
+      "published_file": "evaluation/benchmark_code/test_adapter.py",
+      "original_evaluation_file": "benchmark_code/test_adapter.py",
+      "original_sha256": "e0f8c06ab8f4f325ff5d225a99644f807e1b4d07be9e47a4f0a940a619b631e1",
+      "published_sha256": "e0f8c06ab8f4f325ff5d225a99644f807e1b4d07be9e47a4f0a940a619b631e1",
+      "byte_identical": true
+    },
+    {
+      "published_file": "evaluation/generation_code/generation.py",
+      "original_evaluation_file": "generation_code/generation.py",
+      "original_sha256": "d8f2d2cbd8015b6d28072ea6a33ff7efdcfb89834fd4fb46035642a8924c9dac",
+      "published_sha256": "0d6253a99c1559b53812e50bdb0748a0a94aae377c3fdb8c6b130c2c6f7b23a3",
+      "byte_identical": false
+    },
+    {
+      "published_file": "evaluation/generation_code/analyze.py",
+      "original_evaluation_file": "generation_code/analyze.py",
+      "original_sha256": "85d8895786b4126afa6844e99f6fc686181462bf7010f005a21d7addcea4b761",
+      "published_sha256": "6e2aa889c31bc9c14237da7e6928326046f9641cda247ffdb490796c37caa160",
+      "byte_identical": false
+    },
+    {
+      "published_file": "evaluation/generation_code/test_generation.py",
+      "original_evaluation_file": "generation_code/test_generation.py",
+      "original_sha256": "22dea8d6b72545bf44b7fa89f3d4042a88b156d868ef812b72812c8c6db1fc07",
+      "published_sha256": "22dea8d6b72545bf44b7fa89f3d4042a88b156d868ef812b72812c8c6db1fc07",
+      "byte_identical": true
+    },
+    {
+      "published_file": "evaluation/generation_code/test_metrics.py",
+      "original_evaluation_file": "generation_code/test_metrics.py",
+      "original_sha256": "fa1e0ffe592ca76d0356ade0a93a79484355894e230f1f92b9ae9c1707e73be6",
+      "published_sha256": "fa1e0ffe592ca76d0356ade0a93a79484355894e230f1f92b9ae9c1707e73be6",
+      "byte_identical": true
+    }
+  ]
+}

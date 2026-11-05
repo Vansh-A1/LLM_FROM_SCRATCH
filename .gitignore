@@ -46,3 +46,16 @@ __pycache__/
 
 # Local personal image
 /Adobe Express - file.png
+
+# GPT-2 local experiment artifacts
+**/.cache/
+/gpt2/data/
+/gpt2/checkpoints/
+/gpt2/recovery/
+/gpt2/samples/
+/gpt2/validation/
+/evaluation/outputs/
+/evaluation/cache/
+*.log
+*.pid
+*.sock

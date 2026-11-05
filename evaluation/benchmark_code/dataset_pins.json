@@ -1,0 +1,22 @@
+[
+  {
+    "task": "lambada_openai",
+    "dataset": "EleutherAI/lambada_openai",
+    "revision": "900124bf3b8235c6daf21033af9948b3f07346c4"
+  },
+  {
+    "task": "hellaswag",
+    "dataset": "Rowan/hellaswag",
+    "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+  },
+  {
+    "task": "piqa",
+    "dataset": "baber/piqa",
+    "revision": "142f6d7367fd9877f0fb3b5734ea6a545f54cdd1"
+  },
+  {
+    "task": "arc_easy",
+    "dataset": "allenai/ai2_arc",
+    "revision": "210d026faf9955653af8916fad021475a3f00453"
+  }
+]

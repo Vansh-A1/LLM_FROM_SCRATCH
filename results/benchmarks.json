@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "evaluation_date": "2026-11-05",
+  "primary": {
+    "name": "GPT-2 Small trained from scratch",
+    "checkpoint_sha256": "6fe9cc53a9b3890d682c54208a54ce696ed8be98fbff414d1fa19b212aa3b1fe",
+    "source_sha256": "9e1416e3a2fe393097b05c51575ae434bfea464bbc2d8c82c9ee909115945a40",
+    "parameters": 124439808,
+    "optimizer_updates": 17234,
+    "training_token_exposures": 9035579392
+  },
+  "reference": {
+    "model_id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "safetensors_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "comparison": "External pretrained reference with different training data/history; not equal compute"
+  },
+  "protocol": {
+    "zero_shot": true,
+    "seeds": 42,
+    "precision": "float32",
+    "tf32": false,
+    "harness_version": "0.4.13",
+    "packages": {
+      "torch": "2.10.0",
+      "lm_eval": "0.4.13",
+      "datasets": "4.8.4",
+      "transformers": "5.5.3",
+      "tiktoken": "0.14.0",
+      "numpy": "2.4.2",
+      "huggingface_hub": "1.33.0"
+    },
+    "primary_attention": "PyTorch SDPA MATH",
+    "reference_attention": "Transformers eager",
+    "normalization": "Character length, original harness task definition",
+    "dataset_pins": [
+      {
+        "task": "lambada_openai",
+        "dataset": "EleutherAI/lambada_openai",
+        "revision": "900124bf3b8235c6daf21033af9948b3f07346c4"
+      },
+      {
+        "task": "hellaswag",
+        "dataset": "Rowan/hellaswag",
+        "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      {
+        "task": "piqa",
+        "dataset": "baber/piqa",
+        "revision": "142f6d7367fd9877f0fb3b5734ea6a545f54cdd1"
+      },
+      {
+        "task": "arc_easy",
+        "dataset": "allenai/ai2_arc",
+        "revision": "210d026faf9955653af8916fad021475a3f00453"
+      }
+    ],
+    "total_items_per_model": 19409,
+    "candidate_likelihood_requests_per_model": 58498,
+    "actual_context_truncations": 0
+  },
+  "tasks": {
+    "lambada_openai": {
+      "items": 5153,
+      "primary": {
+        "acc": {
+          "correct": 1507,
+          "total": 5153,
+          "accuracy": 0.2924509994178149,
+          "wilson_95_ci": [
+            0.2801892365787584,
+            0.3050219790305029
+          ]
+        }
+      },
+      "reference": {
+        "acc": {
+          "correct": 1678,
+          "total": 5153,
+          "accuracy": 0.32563555210556955,
+          "wilson_95_ci": [
+            0.3129748134602364,
+            0.33855606753548223
+          ]
+        }
+      },
+      "last_word_perplexity": {
+        "primary": 62.29585084875113,
+        "reference": 40.055421000145444
+      }
+    },
+    "hellaswag": {
+      "items": 10042,
+      "primary": {
+        "acc": {
+          "correct": 2784,
+          "total": 10042,
+          "accuracy": 0.27723561043616807,
+          "wilson_95_ci": [
+            0.2685669585992903,
+            0.28607462933144207
+          ]
+        },
+        "acc_norm": {
+          "correct": 2944,
+          "total": 10042,
+          "accuracy": 0.293168691495718,
+          "wilson_95_ci": [
+            0.28434575843108695,
+            0.30214980622341964
+          ]
+        }
+      },
+      "reference": {
+        "acc": {
+          "correct": 2904,
+          "total": 10042,
+          "accuracy": 0.2891854212308305,
+          "wilson_95_ci": [
+            0.28039980011831545,
+            0.2981322703552476
+          ]
+        },
+        "acc_norm": {
+          "correct": 3127,
+          "total": 10042,
+          "accuracy": 0.31139215295757816,
+          "wilson_95_ci": [
+            0.3024088568579842,
+            0.320519693674339
+          ]
+        }
+      }
+    },
+    "piqa": {
+      "items": 1838,
+      "primary": {
+        "acc": {
+          "correct": 1120,
+          "total": 1838,
+          "accuracy": 0.6093579978237215,
+          "wilson_95_ci": [
+            0.5868470788415968,
+            0.6314127491554312
+          ]
+        },
+        "acc_norm": {
+          "correct": 1116,
+          "total": 1838,
+          "accuracy": 0.6071817192600653,
+          "wilson_95_ci": [
+            0.5846533417004973,
+            0.6292630071324108
+          ]
+        }
+      },
+      "reference": {
+        "acc": {
+          "correct": 1156,
+          "total": 1838,
+          "accuracy": 0.6289445048966268,
+          "wilson_95_ci": [
+            0.6066117947173785,
+            0.6507393457567293
+          ]
+        },
+        "acc_norm": {
+          "correct": 1149,
+          "total": 1838,
+          "accuracy": 0.6251360174102285,
+          "wilson_95_ci": [
+            0.6027656569636602,
+            0.6469843949732376
+          ]
+        }
+      }
+    },
+    "arc_easy": {
+      "items": 2376,
+      "primary": {
+        "acc": {
+          "correct": 1001,
+          "total": 2376,
+          "accuracy": 0.4212962962962963,
+          "wilson_95_ci": [
+            0.4015850151485462,
+            0.44126165910624554
+          ]
+        },
+        "acc_norm": {
+          "correct": 920,
+          "total": 2376,
+          "accuracy": 0.3872053872053872,
+          "wilson_95_ci": [
+            0.36781609503530743,
+            0.40695881780043697
+          ]
+        }
+      },
+      "reference": {
+        "acc": {
+          "correct": 1041,
+          "total": 2376,
+          "accuracy": 0.43813131313131315,
+          "wilson_95_ci": [
+            0.41829696668747757,
+            0.45816539221869573
+          ]
+        },
+        "acc_norm": {
+          "correct": 938,
+          "total": 2376,
+          "accuracy": 0.3947811447811448,
+          "wilson_95_ci": [
+            0.3753117424269481,
+            0.41459022850191796
+          ]
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "lambada_openai": {
+      "items": 5153,
+      "identical_ids_documents_prompts_targets": true,
+      "alignment_sha256": "d7be48213155d7f4e204cc89917220bb22f53f46a58a4ba7f51eb308c248c900",
+      "metrics": {
+        "acc": {
+          "difference_final_minus_reference": -0.033184552687754706,
+          "paired_bootstrap_95_ci": [
+            -0.044440131961963905,
+            -0.021928973413545508
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 532,
+          "same_correctness": 4260,
+          "final_only_correct": 361,
+          "ci_excludes_zero": true,
+          "multiple_testing_correction": null
+        }
+      }
+    },
+    "hellaswag": {
+      "items": 10042,
+      "identical_ids_documents_prompts_targets": true,
+      "alignment_sha256": "edbd56db23cd7c52852e233688b9e773a734e39b6f1545e68cc9e43ca4882a61",
+      "metrics": {
+        "acc": {
+          "difference_final_minus_reference": -0.011949810794662417,
+          "paired_bootstrap_95_ci": [
+            -0.016729735112527386,
+            -0.007269468233419637
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 352,
+          "same_correctness": 9458,
+          "final_only_correct": 232,
+          "ci_excludes_zero": true,
+          "multiple_testing_correction": null
+        },
+        "acc_norm": {
+          "difference_final_minus_reference": -0.01822346146186019,
+          "paired_bootstrap_95_ci": [
+            -0.024596693885680143,
+            -0.011949810794662417
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 613,
+          "same_correctness": 8999,
+          "final_only_correct": 430,
+          "ci_excludes_zero": true,
+          "multiple_testing_correction": null
+        }
+      }
+    },
+    "piqa": {
+      "items": 1838,
+      "identical_ids_documents_prompts_targets": true,
+      "alignment_sha256": "06b69772d9e6adfdd9ba3be3a04f28441e3a51c127296f51e6534a62f6b4d8f0",
+      "metrics": {
+        "acc": {
+          "difference_final_minus_reference": -0.01958650707290533,
+          "paired_bootstrap_95_ci": [
+            -0.03645266594124048,
+            -0.002720348204570185
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 144,
+          "same_correctness": 1586,
+          "final_only_correct": 108,
+          "ci_excludes_zero": true,
+          "multiple_testing_correction": null
+        },
+        "acc_norm": {
+          "difference_final_minus_reference": -0.017954298150163223,
+          "paired_bootstrap_95_ci": [
+            -0.03482045701849837,
+            -0.001088139281828074
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 147,
+          "same_correctness": 1577,
+          "final_only_correct": 114,
+          "ci_excludes_zero": true,
+          "multiple_testing_correction": null
+        }
+      }
+    },
+    "arc_easy": {
+      "items": 2376,
+      "identical_ids_documents_prompts_targets": true,
+      "alignment_sha256": "e0e7a0e857bb91b1f512366d6a1e2b22e0c5f8df16e1b587f2b0688b2e1a901c",
+      "metrics": {
+        "acc": {
+          "difference_final_minus_reference": -0.016835016835016835,
+          "paired_bootstrap_95_ci": [
+            -0.03367003367003367,
+            0
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 229,
+          "same_correctness": 1958,
+          "final_only_correct": 189,
+          "ci_excludes_zero": false,
+          "multiple_testing_correction": null
+        },
+        "acc_norm": {
+          "difference_final_minus_reference": -0.007575757575757576,
+          "paired_bootstrap_95_ci": [
+            -0.023148148148148147,
+            0.007575757575757576
+          ],
+          "resamples": 10000,
+          "seed": 42,
+          "method": "paired nonparametric item bootstrap using exact multinomial distribution of item differences",
+          "reference_only_correct": 183,
+          "same_correctness": 2028,
+          "final_only_correct": 165,
+          "ci_excludes_zero": false,
+          "multiple_testing_correction": null
+        }
+      }
+    }
+  },
+  "caveats": [
+    "No complete training-corpus/benchmark decontamination audit.",
+    "Unadjusted paired bootstrap intervals are exploratory.",
+    "The exact previously evaluated 163M checkpoint was unavailable; no matched improvement claim.",
+    "Primary inference used mixed batch sizes 8 and 32 after a verified parity check."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "note": "These three source files are byte-identical to the locally evaluated experiment. Publication changes directory layout and documentation, not model or training logic.",
+  "files": {
+    "gpt2/train.py": "9e1416e3a2fe393097b05c51575ae434bfea464bbc2d8c82c9ee909115945a40",
+    "gpt2/prepare.py": "983cb4706f7e68218984d8f8443be70e7667c963c5d64ad244735b24afe92c34",
+    "gpt2/inference.py": "557fcdb3c54bec9bd3323c7a3ee37da73f53cc349361914c9e25ae8c5e59d52f"
+  },
+  "checkpoint_sha256": "6fe9cc53a9b3890d682c54208a54ce696ed8be98fbff414d1fa19b212aa3b1fe"
+}

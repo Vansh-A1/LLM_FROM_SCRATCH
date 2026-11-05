@@ -1,0 +1,3 @@
+# Corpus preparation; install after requirements.txt.
+datasets==4.8.4
+tqdm==4.67.1

@@ -1,7 +1,6 @@
 # Learning exercises
 
-These are earlier steps in building the project. The active model imports code
-from `llm/` and `training/`; it does not import these exercises.
+These are earlier steps in building the project. The completed GPT-2 model lives in `gpt2/`; the earlier trainer lives in `llm/` and `training/`. Neither imports these exercises.
 
 | Topic | File | What it explores |
 | --- | --- | --- |
@@ -36,5 +35,4 @@ its sample corpus must contain that sentence's words. These exercises retain
 their original learning logic and may have limitations. In particular,
 `causal_attention_draft.py` is unfinished and is not a supported runnable example.
 
-For the model actually used for training, start with [`../llm/model.py`](../llm/model.py)
-and [`../training/train.py`](../training/train.py).
+For the completed 124M model, start with [`../gpt2/`](../gpt2/). The earlier 163M experiment remains in [`../llm/`](../llm/) and [`../training/`](../training/).

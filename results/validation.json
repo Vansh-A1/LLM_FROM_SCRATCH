@@ -1,0 +1,98 @@
+{
+  "sampled_training_validation": {
+    "cross_entropy": 3.129866123199463,
+    "perplexity": 22.870917452220112,
+    "sampled_targets": 4915200,
+    "batches": 600,
+    "overlapping_samples": true,
+    "bf16_replay_cross_entropy": 3.1298828125,
+    "bf16_replay_perplexity": 22.8712991550202,
+    "fp32_replay_cross_entropy": 3.129300355911255,
+    "fp32_replay_perplexity": 22.85798149499012
+  },
+  "full_file": {
+    "protocol": "Full contiguous held-out file, stride512 context1024, targets1..N-1 scored exactly once; no document-boundary resets",
+    "loss": 3.0556137916974495,
+    "perplexity": 21.234214912653826,
+    "tokens": 4434605,
+    "windows": 8661,
+    "precision": "FP32",
+    "attention": "math SDPA",
+    "file_tokens": 4434606,
+    "first_token_excluded": true,
+    "batch_size": 8,
+    "nominal_batch_sizes": [
+      4,
+      8
+    ],
+    "imported_batch4_windows": 3260,
+    "new_batch8_windows": 5401,
+    "import_provenance_sha256": "af8764c9eea86ed58426b3e5d9533511f61df3b9f583b05c86b446c2b4fd4b68",
+    "numerical_note": "Imported batch4 and remaining batch8 windows share identical targets, FP32/math SDPA and token-weighted aggregation. Batch-dependent floating-point differences can occur.",
+    "model": {
+      "sha256": "6fe9cc53a9b3890d682c54208a54ce696ed8be98fbff414d1fa19b212aa3b1fe",
+      "source_sha256": "9e1416e3a2fe393097b05c51575ae434bfea464bbc2d8c82c9ee909115945a40",
+      "step": 17234,
+      "tokens_processed": 9035579392,
+      "parameters": 124439808,
+      "model_config": {
+        "n_layer": 12,
+        "n_head": 12,
+        "n_embd": 768,
+        "block_size": 1024,
+        "vocab_size": 50257,
+        "dropout": 0,
+        "bias": true
+      },
+      "train_config": {
+        "total_batch_size": 524288,
+        "learning_rate": 0.0006,
+        "min_lr": 0.00006,
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "weight_decay": 0.1,
+        "grad_clip": 1,
+        "eps": 1e-8,
+        "warmup_iters": 2000,
+        "max_iters": 600000,
+        "lr_decay_iters": 600000,
+        "use_flash_attention": true,
+        "use_compile": true,
+        "use_fused_adamw": true,
+        "backend": "nccl",
+        "seed": 1337
+      },
+      "runtime": {
+        "world_size": 3,
+        "micro_batch_size": 8,
+        "accumulation_steps": 22,
+        "batch_policy": "rotating_sequence_quotas_v1",
+        "global_sequences": 512,
+        "dtype": "torch.bfloat16",
+        "flash": true,
+        "fused_adamw": true,
+        "compiled": true,
+        "compile_dynamic": false,
+        "dataset_id": "c00a99666579e647895a4def1d558ffbc762dec2e54c10fe29648e04109b704d",
+        "torch": "2.10.0+cu128",
+        "cuda": "12.8"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "weights_only": true,
+      "safe_globals": [
+        "numpy._core.multiarray._reconstruct",
+        "numpy.dtype",
+        "numpy.ndarray",
+        "numpy.dtypes.UInt32DType"
+      ],
+      "context_length": 1024,
+      "eot_token_id": 50256,
+      "space_token_id": 220
+    },
+    "val_file_sha256": "009ecdd6da34f1ae915ff1f0f3aeb0416b02f2252356505b32ce44166dd5cfcc",
+    "tf32": false,
+    "invocation_seconds": 834.7014623100404
+  },
+  "interpretation": "Different coverage and context protocol; do not treat the difference as learning after training."
+}

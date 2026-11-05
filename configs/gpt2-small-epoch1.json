@@ -1,0 +1,100 @@
+{
+  "checkpoint": {
+    "step": 17234,
+    "sha256": "6fe9cc53a9b3890d682c54208a54ce696ed8be98fbff414d1fa19b212aa3b1fe",
+    "bytes": 1493532423
+  },
+  "parameter_count": 124439808,
+  "model_config": {
+    "n_layer": 12,
+    "n_head": 12,
+    "n_embd": 768,
+    "block_size": 1024,
+    "vocab_size": 50257,
+    "dropout": 0.0,
+    "bias": true
+  },
+  "train_config": {
+    "total_batch_size": 524288,
+    "learning_rate": 0.0006,
+    "min_lr": 6e-05,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eps": 1e-08,
+    "warmup_iters": 2000,
+    "max_iters": 600000,
+    "lr_decay_iters": 600000,
+    "use_flash_attention": true,
+    "use_compile": true,
+    "use_fused_adamw": true,
+    "backend": "nccl",
+    "seed": 1337
+  },
+  "runtime": {
+    "world_size": 3,
+    "micro_batch_size": 8,
+    "accumulation_steps": 22,
+    "batch_policy": "rotating_sequence_quotas_v1",
+    "global_sequences": 512,
+    "dtype": "torch.bfloat16",
+    "flash": true,
+    "fused_adamw": true,
+    "compiled": true,
+    "compile_dynamic": false,
+    "dataset_id": "c00a99666579e647895a4def1d558ffbc762dec2e54c10fe29648e04109b704d",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8"
+  },
+  "manifest": {
+    "dataset": "Skylion007/openwebtext",
+    "files": {
+      "train": {
+        "bytes": 18071164978,
+        "documents": 8009762,
+        "eot_count": 8009762,
+        "filename": "train.bin",
+        "max_token": 50256,
+        "min_token": 0,
+        "sha256": "68a352b5dbd52e85b7a8a1556c1ccae65ce14b02e4913788b0883b89ceddc1d1",
+        "tokens": 9035582489
+      },
+      "val": {
+        "bytes": 8869212,
+        "documents": 4007,
+        "eot_count": 4007,
+        "filename": "val.bin",
+        "max_token": 50256,
+        "min_token": 0,
+        "sha256": "009ecdd6da34f1ae915ff1f0f3aeb0416b02f2252356505b32ce44166dd5cfcc",
+        "tokens": 4434606
+      }
+    },
+    "split": {
+      "seed": 2357,
+      "shuffle": true,
+      "validation_fraction": 0.0005
+    },
+    "tokenizer": "gpt2",
+    "tokenization": "tiktoken.encode_ordinary(text), append EOT per document",
+    "dataset_revision": "b4325f019c648b1641a1784748667e8b74e5e064"
+  },
+  "source_sha256": "9e1416e3a2fe393097b05c51575ae434bfea464bbc2d8c82c9ee909115945a40",
+  "record_type": "measured experiment provenance; not a CLI configuration file",
+  "completed_updates": 17234,
+  "training_tokens": 9035579392,
+  "stop_at": 17234,
+  "completed_at": "2026-11-05T05:03:49.342922+05:30",
+  "hardware": [
+    "NVIDIA RTX 2000 Ada Generation 16 GB",
+    "NVIDIA RTX 2000 Ada Generation 16 GB",
+    "NVIDIA RTX 5000 Ada Generation 32 GB"
+  ],
+  "topology": "three machines, one DDP worker/GPU per machine",
+  "source_location": "gpt2/train.py",
+  "checkpoint_in_repository": false,
+  "sampling_note": "One epoch-equivalent token budget. Randomly sampled contiguous training windows may repeat or overlap; not a guaranteed once-through traversal.",
+  "python": "3.13.11",
+  "platform": "Linux"
+}

@@ -1,0 +1,140 @@
+{
+  "lambada_openai": {
+    "dataset": "EleutherAI/lambada_openai",
+    "revision": "900124bf3b8235c6daf21033af9948b3f07346c4",
+    "task_yaml_sha256": "96dee2fe378666b6b5411958a25ad5c83f5b43eb6b3c830f4b0fd485f9adb6a5",
+    "splits": {
+      "test": {
+        "documents": 5153,
+        "dataset_fingerprint": "b7a20cd35991215a",
+        "cache_files": [
+          {
+            "path": "lambada_openai-test.arrow",
+            "sha256": "048a8a2bfcc3360404fb8f0f351c0c92c64200df9a894fd65cbf99bd25469ab0",
+            "bytes": 1710736
+          }
+        ]
+      }
+    }
+  },
+  "hellaswag": {
+    "dataset": "Rowan/hellaswag",
+    "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+    "task_yaml_sha256": "e9ef8ac3fed02bf283777d946ae76cbf906152e9c92533c9794e5a9dad78d1cf",
+    "splits": {
+      "train": {
+        "documents": 39905,
+        "dataset_fingerprint": "5c5bea5996a5827b",
+        "cache_files": [
+          {
+            "path": "hellaswag-train.arrow",
+            "sha256": "92a7294a7a191f19a9eb02e5947a20a21d91f4d1aab62bdeff57b1f2d599a17e",
+            "bytes": 43268336
+          }
+        ]
+      },
+      "test": {
+        "documents": 10003,
+        "dataset_fingerprint": "ade68387409a89dc",
+        "cache_files": [
+          {
+            "path": "hellaswag-test.arrow",
+            "sha256": "ccfab73ded659df04451e5576ae8fece2750bbcc926b58698d8c29664c835b9c",
+            "bytes": 10802528
+          }
+        ]
+      },
+      "validation": {
+        "documents": 10042,
+        "dataset_fingerprint": "71a62ba9d49be089",
+        "cache_files": [
+          {
+            "path": "hellaswag-validation.arrow",
+            "sha256": "fdd100245fae28e387869527dd0b8af1a0a931f7cf364abaf6f3138de7f0d27b",
+            "bytes": 11186424
+          }
+        ]
+      }
+    }
+  },
+  "piqa": {
+    "dataset": "baber/piqa",
+    "revision": "142f6d7367fd9877f0fb3b5734ea6a545f54cdd1",
+    "task_yaml_sha256": "e874f7956ccac325b888d4a5dc600bad867b79fba2bd358fe8761ab8263270fb",
+    "splits": {
+      "train": {
+        "documents": 16113,
+        "dataset_fingerprint": "f0a93a05e1bc907d",
+        "cache_files": [
+          {
+            "path": "piqa-train.arrow",
+            "sha256": "e3048a459376b16ec8daaf9733090ce7425f12e134c08f2e3334077c56908785",
+            "bytes": 4110832
+          }
+        ]
+      },
+      "validation": {
+        "documents": 1838,
+        "dataset_fingerprint": "506e3cab853d8e73",
+        "cache_files": [
+          {
+            "path": "piqa-validation.arrow",
+            "sha256": "6e14731c78016adc6a5738d661111f5cb4c6bce461c454561eb66be4abc39222",
+            "bytes": 465608
+          }
+        ]
+      },
+      "test": {
+        "documents": 3084,
+        "dataset_fingerprint": "c8edc3d1dc86702a",
+        "cache_files": [
+          {
+            "path": "piqa-test.arrow",
+            "sha256": "6794b0a1f28626db5797ef21928f672901636973e0546056caffe03509cb3a16",
+            "bytes": 763560
+          }
+        ]
+      }
+    }
+  },
+  "arc_easy": {
+    "dataset": "allenai/ai2_arc",
+    "revision": "210d026faf9955653af8916fad021475a3f00453",
+    "task_yaml_sha256": "96da1d9efe1df88659481cedc13985cb347dc068554a2eae561303fa39bfab3f",
+    "splits": {
+      "train": {
+        "documents": 2251,
+        "dataset_fingerprint": "3f0efa3624a04562",
+        "cache_files": [
+          {
+            "path": "ai2_arc-train.arrow",
+            "sha256": "795028faeca17f3fab03d07f92e5993858e31e5a1295d4a45a7c707eb56b1484",
+            "bytes": 621640
+          }
+        ]
+      },
+      "test": {
+        "documents": 2376,
+        "dataset_fingerprint": "b019ca21ba59e1f3",
+        "cache_files": [
+          {
+            "path": "ai2_arc-test.arrow",
+            "sha256": "8d1f615aaf6fd5256003a72e33b24394a8460806b59e11fe7e6586a9b6642f71",
+            "bytes": 660168
+          }
+        ]
+      },
+      "validation": {
+        "documents": 570,
+        "dataset_fingerprint": "85bbde565a00cd05",
+        "cache_files": [
+          {
+            "path": "ai2_arc-validation.arrow",
+            "sha256": "caa0a247e56619a9cf109290abd532ce41dd911fe86210772c256c95b52e8d69",
+            "bytes": 158848
+          }
+        ]
+      }
+    }
+  }
+}
